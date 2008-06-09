@@ -11,8 +11,13 @@ from google.appengine.api import users
 
 class MainController(webapp.RequestHandler):
   def get(self):
+    tag = self.request.get('tag')
+    logging.debug('tag=' + tag)
     items_to_display = 10
-    items_query = models.Item.all().order('-Posted_at')
+    if tag == "":
+        items_query = models.Item.all().order('-Posted_at')
+    else:
+        items_query = db.GqlQuery("SELECT * FROM Item WHERE Tags = :1", tag)
     items_count = items_query.count()
     items = items_query.fetch(items_to_display)
         

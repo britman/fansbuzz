@@ -17,7 +17,7 @@ class ItemForm(djangoforms.ModelForm):
 
 class Comment(db.Model):
   Author = db.UserProperty()
-  Comment = db.StringProperty(required=True)
+  Comment = db.TextProperty(required=True)
   Posted_at = db.DateTimeProperty(auto_now_add=True)
   Item = db.ReferenceProperty(Item)
   

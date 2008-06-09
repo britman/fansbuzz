@@ -52,63 +52,14 @@ display:inline-block;
 text-decoration:none;
 }
 
-#tags ul
+.tags, .social
 {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	width: 150px;
 }
 
-#tags li{
+.tags li, .social li{
     display: inline
 }
 
-#websites {
-	margin: 4px auto 0;
-}
-
-#websites fieldset {
-	margin: 0;
-	padding: 0;
-	display: inline;
-	vertical-align: middle;
-}
-
-#websites li {
-	display: inline;
-	font-weight: bold;
-	padding: 0;
-}
-
-#websites > li {
-	padding: 0 0px;
-}
-
-#websites li.first {
-	padding-left: 0;
-}
-
-#websites li.last {
-	background: none;
-	padding-right: 0;
-}
-
-#websites form {
-	display: inline;
-}
-
- #websites form button {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	background: 0;
-	color: #023045;
-	font-size: 1em;
-	font-weight: bold;
-	cursor: pointer;
-}
-
-#websites form button img {
-	vertical-align: middle;
-}

@@ -1,61 +1,42 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <h3><a href="/item">Post a story</a></h3>
     {% for item in items %}
       <div><a href="{{ item.Url|escape }}">{{ item.Title|escape }}</a></div>
       <div>Posted by {{item.Author.nickname}} @{{item.Posted_at}}</div>
-      <div id="tags">
-          <ul>
+          <ul class="tags">
           {% for tag in item.Tags %}
-          <li><a href="#">{{ tag|escape }}</a></li>
+          <li><a href="?tag={{ tag|escape }}">{{ tag|escape }}</a></li>
           {% endfor %}
           </ul>
-      </div>
       <div><a href="/comment?k={{ item.key }}">{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}</a></div>
       <div class="spacer"></div>
-       <ul id="websites">
-			        <li class="first">
-						<form id="deliciousForm" action="http://del.icio.us/post" method="post">
-							<fieldset>
-								<input type="hidden" name="url" value="" />
-								<input type="hidden" name="title" value="" />
-								<input type="hidden" name="v" value="2" />
-								<button type="submit"><abbr title="bookmark with del.icio.us"><img src="http://i.cnn.net/v5cache/TBS/video/img/cmn/icn_delicious.ico" alt="del.icio.us" /> del.icio.us</button></abbr>
-							</fieldset>
-						</form>
-					</li>
-			        <li>
-						<form id="diggForm" action="http://digg.com/submit" method="post">
-							<fieldset>
-								<input type="hidden" name="url" value="" />
-								<input type="hidden" name="title" value="" />
-								<input type="hidden" name="phase" value="2" />
-								<button type="submit"><abbr title="bookmark with Digg"><img src="http://i.cnn.net/v5cache/TBS/video/img/cmn/icn_digg.ico" alt="Digg" /> Digg</button></abbr>
-							</fieldset>
-						</form>
-					</li>					
-			        <li>
-						<form id="facebookForm" action="http://www.facebook.com/sharer.php" method="post">
-							<fieldset>
-								<input type="hidden" name="u" value="" />
-								<input type="hidden" name="t" value="" />
-								<button type="submit"><abbr title="bookmark with Facebook"><img src="http://i.cnn.net/v5cache/TBS/video/img/cmn/icn_facebook.ico" alt="Facebook" /> Facebook</button></abbr>
-							</fieldset>
-						</form>
-					</li>
-			        <li class="last">
-						<form id="simpyForm" action="http://www.simpy.com/simpy/LinkAdd.do" method="post">
-							<fieldset>
-								<input type="hidden" name="href" value="" />
-								<input type="hidden" name="title" value="" />
-								<button type="submit"><abbr title="bookmark with Simpy"><img src="http://i.cnn.net/v5cache/TBS/video/img/cmn/icn_simpy.ico" alt="Simpy" /> Simpy</button></abbr>
-							</fieldset>
-						</form>
-					</li>
-			      </ul>
+      
+      <ul class="social">
+        <li>
+            <a title="e-mail this story to your friends" href="http://www.feedburner.com/fb/a/emailFlare?itemTitle=Ma+da+ceiling+cat+witnesses+r%26nbsp%3Bhere&uri=http://icanhascheezburger.com/2008/06/09/funny-pictures-scratchtower-magazine-4-u/" rel="nofollow" target="_blank">e-mail it</a>
+        </li>
+        <li class="facebook"> 
+            <a id="facebook" title="Post this story to Facebook" href="http://www.facebook.com/sharer.php?u=http://news.bbc.co.uk/1/hi/england/staffordshire/7443222.stm" target="_blank">Facebook</a> 
+        </li>
+        <li class="delicious"> 
+            <a id="delicious" title="Post this story to Delicious" href="http://del.icio.us/post?url=http://news.bbc.co.uk/1/hi/england/staffordshire/7443222.stm&amp;title=Footballer in court over deaths" target="_blank">Delicious</a> 
+        </li>
+        <li class="digg"> 
+            <a id="digg" title="Post this story to Digg" href="http://digg.com/submit?url=http://news.bbc.co.uk/1/hi/england/staffordshire/7443222.stm&amp;title=Footballer in court over deaths" target="_blank">Digg</a> 
+        </li>
+        <li class="stumbleupon"> 
+            <a id="stumbleupon" title="Post this story to StumbleUpon" href="http://www.stumbleupon.com/submit?url=http://news.bbc.co.uk/1/hi/england/staffordshire/7443222.stm&amp;title=Footballer in court over deaths" target="_blank">StumbleUpon</a> 
+        </li>
+        <li class="reddit"> 
+            <a id="reddit" title="Post this story to reddit" href="http://reddit.com/submit?url=http://news.bbc.co.uk/1/hi/england/staffordshire/7443222.stm&amp;title=Footballer in court over deaths" target="_blank">reddit</a> 
+        </li>
+      </ul>
+
+     
     {% endfor %}
 
-    <a href="/item">Post a story</a>
 
     <a href="{{ url }}">{{ url_linktext }}</a>
 {% endblock %}
