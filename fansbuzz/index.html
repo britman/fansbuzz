@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h3><a href="/item">Post a story</a></h3>
+    <a href="/item" id="post"><image src="images/add.png" /> Post a story</a> 
+    
     {% for item in items %}
-      <div><a href="{{ item.Url|escape }}">{{ item.Title|escape }}</a></div>
-      <div>Posted by {{item.Author.nickname}} @{{item.Posted_at}}</div>
+      <div class="headline"><a href="{{ item.Url|escape }}">{{ item.Title|escape }}</a></div>
+      <div class="para">Posted by {{item.Author.nickname}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
           <ul class="tags">
+          <li>tags:</li>
           {% for tag in item.Tags %}
           <li><a href="?tag={{ tag|escape }}">{{ tag|escape }}</a></li>
           {% endfor %}
           </ul>
-      <div><a href="/comment?k={{ item.key }}">{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}</a></div>
+      <div class="para"><a href="/comment?k={{ item.key }}">{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}</a></div>
       <div class="spacer"></div>
       
       <ul class="social">
@@ -37,6 +39,4 @@
      
     {% endfor %}
 
-
-    <a href="{{ url }}">{{ url_linktext }}</a>
 {% endblock %}

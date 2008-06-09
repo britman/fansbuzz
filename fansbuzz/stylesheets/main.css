@@ -1,8 +1,21 @@
 body
 {
-    font-family:"Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; 
+    font-family: Georgia, "Times New Roman", Times, serif;
     background:#fff;
     font-size:80%;
+}
+
+a {
+     text-decoration: none;
+     color: #FF0000;
+}
+
+image{
+ border:0;
+}
+
+a:hover {
+    color:Yellow;
 }
 
 div.box .input-text{
@@ -20,7 +33,7 @@ div.box label span{
     display:block;
     float:left;
     padding-right:6px;
-    width:100px;
+    width:150px;
     text-align:right;
     font-weight:bold;
 }
@@ -60,6 +73,57 @@ text-decoration:none;
 }
 
 .tags li, .social li{
-    display: inline
+    display: inline;
+    font-size: 12px;
+    font-family: "Lucida Grande", Tahoma;
+}
+
+.headline, .headline a {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size:24px;
+	margin-top: 5px; margin-bottom: 0px;
+    font-weight: normal;
+    color: #222;
+
+    }
+    
+.comment {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size:18px;
+	margin-top: 5px; margin-bottom: 0px;
+    font-weight: normal;
+    color: #222;
+
+    }
+
+.para {
+    font-family: "Lucida Grande", Tahoma;
+	font-size: 10px;
+	font-weight: lighter;
+	font-variant: normal;
+	text-transform: uppercase;
+	color: #666666;
+        margin-top: 10px;
+	letter-spacing: 0.3em;
+
+}
+
+#post{
+    font-weight:900;
+    font-size:20px;
+}
+
+/*yahoo extensions */
+#doc3 {
+    margin:auto 0px !important;
+}
+
+.yui-g ,#hd img, #ft{
+    margin:auto 20px !important;
+}
+
+#legal {
+    
+    color:#ccc;
 }
 

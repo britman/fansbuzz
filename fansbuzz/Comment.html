@@ -2,10 +2,13 @@
 
 {% block content %}
     
-     <h3>{{item.Title}}</h3>
+     <div class="headline"><a href="{{ item.Url|escape }}">{{ item.Title|escape }}</a></div>
+     <div class="para">Posted by {{item.Author.nickname}} @{{item.Posted_at}}</div>
+     <div class="spacer"></div>
+     <hr />
      {% for comment in item.comment_set %}
-        <div>{{ comment.Comment|escape }}</div>
-        <div>Posted by {{comment.Author.nickname}}</div>
+        <div class="comment">{{ comment.Comment|escape }}</div>
+        <div class="para">Posted by {{comment.Author.nickname}} @{{comment.Posted_at}}</div>
       {% endfor %}
       
      
@@ -19,12 +22,11 @@
     </ul>
     
     {% endif %} 
-    
+    <div class="spacer"></div>
     <form method="POST" action="/comment?k={{item.key}}">
     <div class="box">
-    <h4>Post a comment</h4>
     {% if loggedin %}
-    <label for="id_name"><span>Comment:</span> {{ form.Comment }}</label>
+    <label for="id_name"><span>Post a comment:</span> {{ form.Comment }}</label>
     <label><span>&nbsp;</span><input type="submit" value="Add comment" /></label>
 
     {% else %}
@@ -33,9 +35,3 @@
     </div>
 
 {% endblock %}
-
-
-Fulham 
-Reading 
-Birmingham 
-Derby 
