@@ -1,0 +1,114 @@
+body
+{
+    font-family:"Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; 
+    background:#fff;
+    font-size:80%;
+}
+
+div.box .input-text{
+    border:1px solid #3b6e22;
+    color:#666666;
+}
+
+div.box label{
+    display:block;
+    margin-bottom:10px;
+    color:#555555;
+}
+
+div.box label span{
+    display:block;
+    float:left;
+    padding-right:6px;
+    width:100px;
+    text-align:right;
+    font-weight:bold;
+}
+
+div.box input .input-text{
+	border:1px solid #3b6e22;
+	color:#666666;
+	width:180px;
+}
+
+.spacer {
+    margin-bottom:10px;
+}
+
+.auth {
+    color:#cccccc;
+}
+
+.formbtn{
+background:url(img/green.gif);
+padding:0px 6px;
+border:1px solid #3b6e22;
+height:24px; 
+line-height:24px;
+color:#FFFFFF;
+font-size:12px;
+margin-right:10px;
+display:inline-block;
+text-decoration:none;
+}
+
+#tags ul
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 150px;
+}
+
+#tags li{
+    display: inline
+}
+
+#websites {
+	margin: 4px auto 0;
+}
+
+#websites fieldset {
+	margin: 0;
+	padding: 0;
+	display: inline;
+	vertical-align: middle;
+}
+
+#websites li {
+	display: inline;
+	font-weight: bold;
+	padding: 0;
+}
+
+#websites > li {
+	padding: 0 0px;
+}
+
+#websites li.first {
+	padding-left: 0;
+}
+
+#websites li.last {
+	background: none;
+	padding-right: 0;
+}
+
+#websites form {
+	display: inline;
+}
+
+ #websites form button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: 0;
+	color: #023045;
+	font-size: 1em;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#websites form button img {
+	vertical-align: middle;
+}

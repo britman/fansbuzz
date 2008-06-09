@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for item in items %}
+      <div><a href="{{ item.Url|escape }}">{{ item.Title|escape }}</a></div>
+      <div>Posted by {{item.Author.nickname}} @{{item.Posted_at}}</div>
+      <div id="tags">
+          <ul>
+          {% for tag in item.Tags %}
+          <li><a href="#">{{ tag|escape }}</a></li>
+          {% endfor %}
+          </ul>
+      </div>
+      <div><a href="/comment?k={{ item.key }}">{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}</a></div>
+      <div class="spacer"></div>
+       <ul id="websites">
+			        <li class="first">
+						<form id="deliciousForm" action="http://del.icio.us/post" method="post">
+							<fieldset>
+								<input type="hidden" name="url" value="" />
+								<input type="hidden" name="title" value="" />
+								<input type="hidden" name="v" value="2" />
+								<button type="submit"><abbr title="bookmark with del.icio.us"><img src="http://i.cnn.net/v5cache/TBS/video/img/cmn/icn_delicious.ico" alt="del.icio.us" /> del.icio.us</button></abbr>
+							</fieldset>
+						</form>
+					</li>
+			        <li>
+						<form id="diggForm" action="http://digg.com/submit" method="post">
+							<fieldset>
+								<input type="hidden" name="url" value="" />
+								<input type="hidden" name="title" value="" />
+								<input type="hidden" name="phase" value="2" />
+								<button type="submit"><abbr title="bookmark with Digg"><img src="http://i.cnn.net/v5cache/TBS/video/img/cmn/icn_digg.ico" alt="Digg" /> Digg</button></abbr>
+							</fieldset>
+						</form>
+					</li>					
+			        <li>
+						<form id="facebookForm" action="http://www.facebook.com/sharer.php" method="post">
+							<fieldset>
+								<input type="hidden" name="u" value="" />
+								<input type="hidden" name="t" value="" />
+								<button type="submit"><abbr title="bookmark with Facebook"><img src="http://i.cnn.net/v5cache/TBS/video/img/cmn/icn_facebook.ico" alt="Facebook" /> Facebook</button></abbr>
+							</fieldset>
+						</form>
+					</li>
+			        <li class="last">
+						<form id="simpyForm" action="http://www.simpy.com/simpy/LinkAdd.do" method="post">
+							<fieldset>
+								<input type="hidden" name="href" value="" />
+								<input type="hidden" name="title" value="" />
+								<button type="submit"><abbr title="bookmark with Simpy"><img src="http://i.cnn.net/v5cache/TBS/video/img/cmn/icn_simpy.ico" alt="Simpy" /> Simpy</button></abbr>
+							</fieldset>
+						</form>
+					</li>
+			      </ul>
+    {% endfor %}
+
+    <a href="/item">Post a story</a>
+
+    <a href="{{ url }}">{{ url_linktext }}</a>
+{% endblock %}

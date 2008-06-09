@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Post an item</h2>
+    {% if form.errors %}
+    
+    <b>Please go back and correct the following error{{ form.errors|pluralize }}:</b>
+    <ul>
+        {% for e in form.errors.items %}
+        <li>Field "{{ e.0 }}": {{ e.1|join:", " }}</li>
+        {% endfor %}
+    </ul>
+    
+    {% endif %} 
+    <form method="POST" action="/item">
+    <div class="box">
+    <label for="Title"><span>Title:</span> {{ form.Title }}</label>
+    <label for="Url"><span>Url:</span> {{ form.Url }}</label>
+        <label for="Tags"><span>Clubs:<br />(To select multiple clubs hold down ctrl)</span>
+            <select multiple="true" name="Tags" size="10">
+            <optgroup label="Premiership">
+            <option value ="Man Utd" selected="selected">Man Utd</option>
+            <option value ="Chelsea">Chelsea </option>
+            <option value ="Arsenal">Arsenal </option>
+            <option value ="Liverpool">Liverpool </option>
+            <option value ="Everton">Everton </option>
+            <option value ="Aston Villa">Aston Villa </option>
+            <option value ="Blackburn">Blackburn </option>
+            <option value ="Portsmouth">Portsmouth </option>
+            <option value ="Man City">Man City  </option>
+            <option value ="West Ham">West Ham </option>
+            <option value ="Tottenham">Tottenham </option>
+            <option value ="Newcastle">Newcastle </option>
+            <option value ="Middlesbrough">Middlesbrough  </option>
+            <option value ="Wigan">Wigan </option>
+            <option value ="Sunderland">Sunderland</option>
+            <option value ="Bolton">Bolton </option>
+            <optgroup label="Championship">
+            </optgroup>
+            <optgroup label="League 1">
+            </optgroup>
+            <optgroup label="League 2">
+            </optgroup>
+            </optgroup>
+    </select></label>
+    <label><span>&nbsp;</span><input type="submit" value="Buzz it" /></label>
+    </div>
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+     <h3>{{item.Title}}</h3>
+     {% for comment in item.comment_set %}
+        <div>{{ comment.Comment|escape }}</div>
+        <div>Posted by {{comment.Author.nickname}}</div>
+      {% endfor %}
+      
+     
+    {% if form.errors %}
+    
+    <b>Please go back and correct the following error{{ form.errors|pluralize }}:</b>
+    <ul>
+        {% for e in form.errors.items %}
+        <li>Field "{{ e.0 }}": {{ e.1|join:", " }}</li>
+        {% endfor %}
+    </ul>
+    
+    {% endif %} 
+    
+    <form method="POST" action="/comment?k={{item.key}}">
+    <div class="box">
+    <h4>Post a comment</h4>
+    {% if loggedin %}
+    <label for="id_name"><span>Comment:</span> {{ form.Comment }}</label>
+    <label><span>&nbsp;</span><input type="submit" value="Add comment" /></label>
+
+    {% else %}
+        <div><a href="{{ url }}" class="auth">Log in to post a comment</a></div>
+    {% endif %}   
+    </div>
+
+{% endblock %}
+
+
+Fulham 
+Reading 
+Birmingham 
+Derby 
