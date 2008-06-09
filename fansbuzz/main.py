@@ -30,6 +30,7 @@ class MainController(webapp.RequestHandler):
 
     template_values = {
       'items': items,
+      'items_count': items_count,
       'url': url,
       'url_linktext': url_linktext,
       }
@@ -116,7 +117,7 @@ class CommentController(webapp.RequestHandler):
 
 def main():
   logging.getLogger().setLevel(logging.DEBUG)
-  application = webapp.WSGIApplication([('/', MainController),('/item', ItemController),('/comment', CommentController)],debug=True)
+  application = webapp.WSGIApplication([('/', MainController),('/item', ItemController),('/comment', CommentController),('/Tag/.*', MainController)],debug=True)
   wsgiref.handlers.CGIHandler().run(application)
 
 

@@ -3,6 +3,7 @@ body
     font-family: Georgia, "Times New Roman", Times, serif;
     background:#fff;
     font-size:80%;
+    margin:0px;
 }
 
 a {
@@ -10,8 +11,8 @@ a {
      color: #FF0000;
 }
 
-image{
- border:0;
+img{
+    border:0px;
 }
 
 a:hover {
@@ -78,9 +79,17 @@ text-decoration:none;
     font-family: "Lucida Grande", Tahoma;
 }
 
-.headline, .headline a {
+.sectionheadline {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size:24px;
+	margin-top: 5px; margin-bottom: 0px;
+    font-weight: 900;
+    color: #222;
+}
+
+.headline, .headline a {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size:20px;
 	margin-top: 5px; margin-bottom: 0px;
     font-weight: normal;
     color: #222;
@@ -110,7 +119,8 @@ text-decoration:none;
 
 #post{
     font-weight:900;
-    font-size:20px;
+    font-size:20px;    
+    padding:5px;
 }
 
 /*yahoo extensions */
@@ -123,7 +133,6 @@ text-decoration:none;
 }
 
 #legal {
-    
-    color:#ccc;
+   color:#ccc;
 }
 
