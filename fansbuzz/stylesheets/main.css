@@ -49,6 +49,10 @@ div.box input .input-text{
     margin-bottom:10px;
 }
 
+.largespacer {
+    margin-bottom:25px;
+}
+
 .auth {
     color:#cccccc;
 }
@@ -77,7 +81,28 @@ text-decoration:none;
     display: inline;
     font-size: 12px;
     font-family: "Lucida Grande", Tahoma;
+
 }
+
+.social li a {
+    color:#ccc;
+}
+
+.social li a:hover {
+    color:#eee;
+}
+
+.social li.delicious,.social li.digg, .social li.reddit,.social li.facebook ,.social li.stumbleupon{
+     padding-left:20px
+}
+
+.social li.delicious{background:url("/images/delicious.gif") no-repeat 0 0;}
+.social li.digg{background:url("/images/digg.gif") no-repeat 0 0;}
+.social li.reddit{
+	background:url("/images/reddit.gif") no-repeat 0 0;
+}
+.social li.facebook{background:url("/images/facebook.gif") no-repeat 0 0;}
+.social li.stumbleupon{background:url("/images/stumbleupon.gif") no-repeat 0 0;}
 
 .sectionheadline {
     font-family: Georgia, "Times New Roman", Times, serif;

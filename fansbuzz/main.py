@@ -8,18 +8,50 @@ from google.appengine.ext import webapp
 from google.appengine.ext import db
 from google.appengine.ext.webapp import template
 from google.appengine.api import users
+from datetime import datetime
 
 class MainController(webapp.RequestHandler):
   def get(self):
     tag = self.request.get('tag')
+    mode = self.request.get('mode')
+    
+    try:
+        start = int(self.request.get('start'))
+    except ValueError:
+        start = 0
+        
     logging.debug('tag=' + tag)
     items_to_display = 10
     if tag == "":
         items_query = models.Item.all().order('-Posted_at')
+        page_url = "?start="
+        back_page_url = page_url
+        rss_url = "?mode=RSS"
+        tag_label = ""
     else:
         items_query = db.GqlQuery("SELECT * FROM Item WHERE Tags = :1", tag)
+        page_url = "?tag=" + tag + "&start="
+        back_page_url = page_url
+        rss_url = "?tag=" + tag + "&mode=RSS"
+        tag_label = "tag: " + tag
+        
     items_count = items_query.count()
-    items = items_query.fetch(items_to_display)
+    items = items_query.fetch(items_to_display,start)
+    
+    nextPageStart = items_to_display + start
+    previousPageStart = start - items_to_display
+    
+    logging.debug(str(items_count) + "," + str(items_to_display) + "," + str(nextPageStart) + ",")
+    if items_count > items_to_display and items_count > nextPageStart:
+        page_url =  page_url + str(nextPageStart)
+    else:
+        page_url = ""
+    
+    #previous link setup
+    if start == 0:    
+        back_page_url = ""
+    else:
+        back_page_url = back_page_url + str(previousPageStart)
         
     if users.get_current_user():
       url = users.create_logout_url(self.request.uri)
@@ -30,13 +62,26 @@ class MainController(webapp.RequestHandler):
 
     template_values = {
       'items': items,
-      'items_count': items_count,
+      'page_url': page_url,
+      'back_page_url': back_page_url,
       'url': url,
       'url_linktext': url_linktext,
+      'rss_url': rss_url,
+      'tag': tag_label,
       }
 
-    path = os.path.join(os.path.dirname(__file__), 'index.html')
-    self.response.out.write(template.render(path, template_values))
+    if mode == "RSS":
+        template_values = {
+          'items': items,
+          'url': self.request.uri,
+          'build_date': datetime.now(),
+          'tag': tag,
+        }
+        path = os.path.join(os.path.dirname(__file__), 'rss.xml')
+        self.response.out.write(template.render(path, template_values)) 
+    else:
+        path = os.path.join(os.path.dirname(__file__), 'index.html')
+        self.response.out.write(template.render(path, template_values)) 
     
 class ItemController(webapp.RequestHandler):
   def get(self):

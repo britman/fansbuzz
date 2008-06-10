@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 
+{% block rssfeed %}
+<link href="{{ rss_url }}" rel="alternate" type="application/rss+xml" title="FansBuzz RSS Feed {{tag}}" />
+{% endblock %}
+
 {% block content %}
     <a href="/item" id="post"><image src="/images/add.png" /> Post a story</a> 
-    <div class="sectionheadline">Lastest Buzz</div>
+    <div class="sectionheadline">Lastest Buzz {{ tag }} <a href="{{ rss_url }}"><img src="/images/rss.png" /></a></div>
     {% for item in items %}
       <div class="headline"><a href="{{ item.Url|escape }}">{{ item.Title|escape }}</a></div>
       <div class="para">Posted by {{item.Author.nickname}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
@@ -16,6 +20,7 @@
       <div class="spacer"></div>
       
       <ul class="social">
+        <li>Share this item:</li>
         <li>
             <a title="e-mail this story to your friends" href="http://www.feedburner.com/fb/a/emailFlare?itemTitle=Ma+da+ceiling+cat+witnesses+r%26nbsp%3Bhere&uri=http://icanhascheezburger.com/2008/06/09/funny-pictures-scratchtower-magazine-4-u/" rel="nofollow" target="_blank">e-mail it</a>
         </li>
@@ -35,9 +40,17 @@
             <a id="reddit" title="Post this story to reddit" href="http://reddit.com/submit?url=http://news.bbc.co.uk/1/hi/england/staffordshire/7443222.stm&amp;title=Footballer in court over deaths" target="_blank">reddit</a> 
         </li>
       </ul>
-
+ <div class="largespacer"></div>
      
     {% endfor %}
-    {# {% if items_count > 10 : %} Greater than 10 #}
-    {{items_count}}
+    <div class="para">
+    {% if back_page_url %}
+        <a href="{{ back_page_url }}"><< Previous</a> 
+    {% endif %}
+    
+    {% if page_url %}
+        more stories: <a href="{{ page_url }}">Next >></a> 
+    {% endif %}
+    </div>
+    
 {% endblock %}

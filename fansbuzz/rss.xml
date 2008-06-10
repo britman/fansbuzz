@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss">
+  <channel>
+    <title>FansBuzz RSS Feed {{tag}}</title>
+    <link>{{url|escape}}</link>
+    <description>FansBuzz - your team, your news</description>
+    <language>en-gb</language>
+    <lastBuildDate>{{ build_date }}</lastBuildDate>
+    <copyright>Copyright: (C) Loopwitch 2008</copyright>
+    <ttl>15</ttl>
+    {% for item in items %}
+    <item>
+      <title>{{ item.Title|escape }}</title>
+      <link>{{ item.Url|escape }}</link>
+      <description><a href="/comment?k={{ item.key }}">{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}</a></description>
+      <guid isPermaLink="false">{{ item.Url|escape }}</guid>
+      <pubDate>{{item.Posted_at}}</pubDate>
+      {% for tag in item.Tags %}
+          <category>{{ tag|escape }}</category> 
+     {% endfor %}
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
