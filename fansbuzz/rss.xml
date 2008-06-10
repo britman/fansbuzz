@@ -11,8 +11,8 @@
     {% for item in items %}
     <item>
       <title>{{ item.Title|escape }}</title>
-      <link>{{ item.Url|escape }}</link>
-      <description><a href="/comment?k={{ item.key }}">{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}</a></description>
+      <link>http://fansbuzz.com/comment?k={{ item.key }}</link>
+      <comments>http://fansbuzz.com/comment?k={{ item.key }}</comments>
       <guid isPermaLink="false">{{ item.Url|escape }}</guid>
       <pubDate>{{item.Posted_at}}</pubDate>
       {% for tag in item.Tags %}

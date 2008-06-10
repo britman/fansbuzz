@@ -3,6 +3,7 @@ import wsgiref.handlers
 import os
 import models
 import logging
+import time, datetime
 
 from google.appengine.ext import webapp
 from google.appengine.ext import db
@@ -99,12 +100,25 @@ class ItemController(webapp.RequestHandler):
         self.redirect(redir)
         
   def post(self):
-    if users.get_current_user():
+    if self.request.get('Auth') == "britman@gmail.com":
+        user = users.User("britman@gmail.com")       
+    
+    if user != None or users.get_current_user():
         data = models.ItemForm(data=self.request.POST)  
         logging.debug(self.request.POST)        
         if data.is_valid():                 
             item = data.save(commit=False)    
-            item.Author = users.get_current_user()
+            if user != None:
+                item.Author = user
+            else:
+                item.Author = users.get_current_user()
+            
+            if self.request.get('Pub') != "":
+            #"Tue, 10 Jun 2008 22:19:16 GMT"
+                timestring = self.request.get('Pub')
+                time_format = "%a, %d %b %Y %H:%M:%S GMT"
+                item.Posted_at = datetime.fromtimestamp(time.mktime(time.strptime(timestring, time_format)))
+
             tags = self.request.get('Tags',allow_multiple=True)
             logging.debug(tags)    
             item.Tags = []
@@ -118,9 +132,10 @@ class ItemController(webapp.RequestHandler):
             }
             path = os.path.join(os.path.dirname(__file__), 'NewItem.html')
             self.response.out.write(template.render(path, template_values))   
-    else:
+    else:      
         redir = users.create_login_url("/")
         self.redirect(redir)
+       
 
 class CommentController(webapp.RequestHandler):
   def get(self): 

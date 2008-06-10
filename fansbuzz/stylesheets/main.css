@@ -92,7 +92,9 @@ text-decoration:none;
     color:#eee;
 }
 
-.social li.delicious,.social li.digg, .social li.reddit,.social li.facebook ,.social li.stumbleupon{
+.social li.email{background:url("/images/email.png") no-repeat 0 0;}
+
+.social li.delicious,.social li.digg, .social li.reddit,.social li.facebook ,.social li.stumbleupon,.social li.email{
      padding-left:20px
 }
 
@@ -138,6 +140,28 @@ text-decoration:none;
 	text-transform: uppercase;
 	color: #666666;
         margin-top: 10px;
+	letter-spacing: 0.3em;
+
+}
+
+.introText {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size:20px;
+    margin:20px;
+    padding:10px;
+    background:#FCFAE1;
+    border-style: dashed;     
+    border-width: 1px;       
+    border-color: #000; 
+}
+
+.source {
+    font-family: "Lucida Grande", Tahoma;
+	font-size: 10px;
+	font-weight: lighter;
+	font-variant: normal;
+	color: #666666;
+    margin-top: 0px;
 	letter-spacing: 0.3em;
 
 }
