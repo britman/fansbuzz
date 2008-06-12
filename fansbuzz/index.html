@@ -6,10 +6,10 @@
 
 {% block content %}
     <a href="/item" id="post"><image src="/images/add.png" /> Post a story</a> 
-    <div class="sectionheadline">Lastest Buzz {{ tag }} <a href="{{ rss_url }}"><img src="/images/rss.png" /></a></div>
+    <div class="sectionheadline">Hot off the press {{ tag }}<!--Lastest Buzz {{ tag }} --><a href="{{ rss_url }}"><img src="/images/rss.png" /></a></div>
     {% for item in items %}
       <div class="headline"><a href="{{ item.Url|escape }}">{{ item.Title|escape }}</a></div>
-       <div  class="source">Source: {{ item.Url|urlizetrunc:50 }}</div>
+      <div  class="source">Source: {{ item.Url|urlizetrunc:50 }}</div>
       <div class="para">Posted by {{item.Author.nickname}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
           <ul class="tags">
           <li>tags:</li>
@@ -23,22 +23,24 @@
       <ul class="social">
         <li>Share this item:</li>
         <li class="email">
-            <a title="e-mail this story to your friends" href="http://www.feedburner.com/fb/a/emailFlare?itemTitle={{ item.Title|escape }}&uri=http://fansbuzz.com/comment?k={{ item.key }}" rel="nofollow" target="_blank">e-mail it</a>
+            <a title="e-mail this story to your friends" href="http://www.feedburner.com/fb/a/emailFlare?itemTitle={{ item.Title|escape }}&uri=http://www.fansbuzz.com/comment%3fk={{ item.key }}" rel="nofollow" target="_blank">e-mail it</a>
         </li>
         <li class="facebook"> 
-            <a id="facebook" title="Post this story to Facebook" href="http://www.facebook.com/sharer.php?u=http://fansbuzz.com/comment?item={{ item.Title|escape }}&amp;k={{ item.key }}" target="_blank">Facebook</a> 
+            <a id="facebook" title="Post this story to Facebook" href="http://www.facebook.com/sharer.php?u=http://www.fansbuzz.com/comment%3fk={{ item.key }}" target="_blank">Facebook</a> 
         </li>
         <li class="delicious"> 
-            <a id="delicious" title="Post this story to Delicious" href="http://del.icio.us/post?url=http://fansbuzz.com/comment?k={{ item.key }};{{ item.Title|escape }}" target="_blank">Delicious</a> 
+            <a id="delicious" title="Post this story to Delicious" href="http://del.icio.us/post?url=http://www.fansbuzz.com/comment%3fk={{ item.key }}&amp;title={{ item.Title|escape }}" target="_blank">Delicious</a> 
         </li>
+        <!--
         <li class="digg"> 
-            <a id="digg" title="Post this story to Digg" href="http://digg.com/submit?url=http://fansbuzz.com/comment?k={{ item.key }}&amp;title={{ item.Title|escape }}" target="_blank">Digg</a> 
+            <a id="digg" title="Post this story to Digg" href="http://digg.com/submit?url=http://www.fansbuzz.com&amp;title={{ item.Title|escape }}" target="_blank">Digg</a> 
         </li>
+        -->
         <li class="stumbleupon"> 
-            <a id="stumbleupon" title="Post this story to StumbleUpon" href="http://www.stumbleupon.com/submit?url=http://fansbuzz.com/comment?k={{ item.key }}&amp;title={{ item.Title|escape }}" target="_blank">StumbleUpon</a> 
+            <a id="stumbleupon" title="Post this story to StumbleUpon" href="http://www.stumbleupon.com/submit?url=http://www.fansbuzz.com/comment%3fk={{ item.key }}&amp;title={{ item.Title|escape }}" target="_blank">StumbleUpon</a> 
         </li>
         <li class="reddit"> 
-            <a id="reddit" title="Post this story to reddit" href="http://reddit.com/submit?url=http://fansbuzz.com/comment?k={{ item.key }}&amp;title={{ item.Title|escape }}" target="_blank">reddit</a> 
+            <a id="reddit" title="Post this story to reddit" href="http://reddit.com/submit?url=http://www.fansbuzz.com/comment%3fk={{ item.key }}&amp;title={{ item.Title|escape }}" target="_blank">reddit</a> 
         </li>
       </ul>
  <div class="largespacer"></div>

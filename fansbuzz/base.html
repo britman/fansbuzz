@@ -2,7 +2,7 @@
  "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-    <title>FansBuzz - Your team, your news. Get all the latest football news. </title>
+    <title>FansBuzz - Your team, your news. Get all the latest football news. {% block titlecontext %}{% endblock %} </title>
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/grids/grids-min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
@@ -23,11 +23,22 @@
 	</div>
 	<div class="yui-b">
     <div class="introText">
-        FansBuzz is a service for football fans everywhere to keep up with the latest news in football. <br /> <br />Comment on stories that you like or dislike. <b>You can even post your own stories and gossip to keep your fellow fans in the loop.</b></div></div>
+        FansBuzz is a service for fans everywhere to keep up with the latest news in football. <br /> <br />Comment on stories that you like or dislike. <b>You can even <a href="/item">post your own stories and gossip</a> to keep your fellow fans in the loop.</b></div></div>
 	</div>
    <div id="ft"><br />
-    <span id="legal">&copy;2008 Loopswitch.</span>
+    <span id="legal">&copy;2008 Loopswitch.</span> | <span><a href="mailto:%68%65%6c%6c%6f%40%66%61%6e%73%62%75%7a%7a%2e%63%6f%6d">&#67;&#111;&#109;&#109;&#101;&#110;&#116;&#115;&#63;&#32;&#83;&#117;&#103;&#103;&#101;&#115;&#116;&#105;&#111;&#110;&#115;&#63;&#32;&#71;&#101;&#116;&#32;&#105;&#110;&#32;&#116;&#111;&#117;&#99;&#104;&#32;&#104;&#101;&#114;&#101;&#46;</a></span>
    </div>
 </div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-636911-5");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
 </body>
 </html>

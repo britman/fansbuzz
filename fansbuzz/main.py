@@ -68,7 +68,7 @@ class MainController(webapp.RequestHandler):
       'url': url,
       'url_linktext': url_linktext,
       'rss_url': rss_url,
-      'tag': tag_label,
+      'tag': tag_label,      
       }
 
     if mode == "RSS":
@@ -87,9 +87,12 @@ class MainController(webapp.RequestHandler):
 class ItemController(webapp.RequestHandler):
   def get(self):
     logging.debug('entering item form')
+    clubtags = ["Arsenal","Aston Villa","Barnsley","Blackburn","Blackpool","Bolton","Bristol City","Burnley","Cardiff","Charlton","Chelsea","Colchester","Coventry","Crystal Palace","Everton","Hull","Ipswich","Leicester","Liverpool","Man City ","Man Utd","Middlesbrough ","Newcastle","Norwich","Plymouth","Portsmouth","Preston","QPR","Scunthorpe","Sheff Utd","Sheff Wed","Southampton","Stoke","Sunderland","Tottenham","Watford","West Brom","West Ham","Wigan","Wolverhampton","Swansea","Nottm Forest","Doncaster","Carlisle","Leeds","Southend","Brighton","Oldham","Northampton","Huddersfield","Tranmere","Walsall","Swindon","Leyton Orient","Hartlepool","Bristol Rovers","Millwall","Yeovil","Cheltenham","Crewe","Bournemouth","Gillingham","Port Vale","Luton","Milton Keynes Dons","Peterborough","Hereford","Stockport","Rochdale","Darlington","Wycombe","Chesterfield","Rotherham","Bradford","Morecambe","Barnet","Bury","Brentford","Lincoln City","Grimsby","Accrington Stanley","Shrewsbury","Macclesfield","Dag & Red","Notts County","Chester","Mansfield","Wrexham"]
+    clubtags.sort()
     if users.get_current_user():
         template_values = {
           'form': models.ItemForm(),
+          'tags': clubtags
           }
           
         path = os.path.join(os.path.dirname(__file__), 'NewItem.html')
@@ -101,7 +104,9 @@ class ItemController(webapp.RequestHandler):
         
   def post(self):
     if self.request.get('Auth') == "britman@gmail.com":
-        user = users.User("britman@gmail.com")       
+        user = users.User("britman@gmail.com")   
+    else: 
+        user = None
     
     if user != None or users.get_current_user():
         data = models.ItemForm(data=self.request.POST)  
@@ -122,8 +127,11 @@ class ItemController(webapp.RequestHandler):
             tags = self.request.get('Tags',allow_multiple=True)
             logging.debug(tags)    
             item.Tags = []
+            count = 0;
             for t in tags:
-                item.Tags.append(t)
+                if count < 10:
+                    item.Tags.append(t)
+                    count = count+1
             item.put()
             self.redirect('/')        
         else:
@@ -159,7 +167,7 @@ class CommentController(webapp.RequestHandler):
             comment.Author = users.get_current_user()            
             comment.Item = item
             comment.put()
-            self.redirect('/') 
+            self.redirect(self.request.uri) 
         else:
             template_values = {
                 'form' : data,

@@ -1,16 +1,56 @@
 {% extends "base.html" %}
 
+{% block titlecontext %}: {{ item.Title|escape }}{% endblock %}
+
 {% block content %}
     
-     <div class="headline"><a href="{{ item.Url|escape }}">{{ item.Title|escape }}</a></div>
-     <div class="para">Posted by {{item.Author.nickname}} @{{item.Posted_at}}</div>
+      <div class="headline"><a href="{{ item.Url|escape }}">{{ item.Title|escape }}</a></div>
+      <div  class="source">Source: {{ item.Url|urlizetrunc:50 }}</div>
+      <div class="para">Posted by {{item.Author.nickname}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
+          <ul class="tags">
+          <li>tags:</li>
+          {% for tag in item.Tags %}
+          <li><a href="/?tag={{ tag|escape }}">{{ tag|escape }}</a></li>
+          {% endfor %}
+          </ul>
+          
      <div class="spacer"></div>
+     
+     <div class="spacer"></div>
+      
+      <ul class="social">
+        <li>Share this item:</li>
+        <li class="email">
+            <a title="e-mail this story to your friends" href="http://www.feedburner.com/fb/a/emailFlare?itemTitle={{ item.Title|escape }}&uri=http://www.fansbuzz.com/comment%3fk={{ item.key }}" rel="nofollow" target="_blank">e-mail it</a>
+        </li>
+        <li class="facebook"> 
+            <a id="facebook" title="Post this story to Facebook" href="http://www.facebook.com/sharer.php?u=http://www.fansbuzz.com/comment%3fk={{ item.key }}" target="_blank">Facebook</a> 
+        </li>
+        <li class="delicious"> 
+            <a id="delicious" title="Post this story to Delicious" href="http://del.icio.us/post?url=http://www.fansbuzz.com/comment%3fk={{ item.key }}&amp;title={{ item.Title|escape }}" target="_blank">Delicious</a> 
+        </li>
+        <!--
+        <li class="digg"> 
+            <a id="digg" title="Post this story to Digg" href="http://digg.com/submit?url=http://www.fansbuzz.com&amp;title={{ item.Title|escape }}" target="_blank">Digg</a> 
+        </li>
+        -->
+        <li class="stumbleupon"> 
+            <a id="stumbleupon" title="Post this story to StumbleUpon" href="http://www.stumbleupon.com/submit?url=http://www.fansbuzz.com/comment%3fk={{ item.key }}&amp;title={{ item.Title|escape }}" target="_blank">StumbleUpon</a> 
+        </li>
+        <li class="reddit"> 
+            <a id="reddit" title="Post this story to reddit" href="http://reddit.com/submit?url=http://www.fansbuzz.com/comment%3fk={{ item.key }}&amp;title={{ item.Title|escape }}" target="_blank">reddit</a> 
+        </li>
+      </ul>
+ <div class="largespacer"></div>
      <hr />
      {% for comment in item.comment_set %}
         <div class="comment">{{ comment.Comment|escape }}</div>
         <div class="para">Posted by {{comment.Author.nickname}} @{{comment.Posted_at}}</div>
       {% endfor %}
-      
+     
+     {% ifequal item.comment_set.count 0 %}
+     <b>Be the first to post a comment on this story!</b>
+     {% endifequal %}
      
     {% if form.errors %}
     

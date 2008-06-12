@@ -12,7 +12,7 @@
     <item>
       <title>{{ item.Title|escape }}</title>
       <link>http://fansbuzz.com/comment?k={{ item.key }}</link>
-      <comments>http://fansbuzz.com/comment?k={{ item.key }}</comments>
+      <comments>http://www.fansbuzz.com/comment?k={{ item.key }}</comments>
       <guid isPermaLink="false">{{ item.Url|escape }}</guid>
       <pubDate>{{item.Posted_at}}</pubDate>
       {% for tag in item.Tags %}

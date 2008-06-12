@@ -21,66 +21,31 @@
             <optgroup label="General">
                 <option value="General" selected="True">General</option>
                 <option value="Gossip">Gossip</option>
-                <option value="Transfer">Transfer</option>
                 <option value="Match Day">Match Day</option>
+                <option value="Transfer">Transfer</option>
             </optgroup>
-            <optgroup label="Clubs">
-                <option value="Arsenal">Arsenal </option>
-                <option value="Aston Villa">Aston Villa </option>
-                <option value="Barnsley">Barnsley</option>
-                <option value="Blackburn">Blackburn </option>
-                <option value="Blackpool">Blackpool</option>
-                <option value="Bolton">Bolton </option>   
-                <option value="Bristol City">Bristol City</option>
-                <option value="Burnley">Burnley</option>
-                <option value="Cardiff">Cardiff</option>
-                <option value="Charlton">Charlton</option>
-                <option value="Chelsea">Chelsea </option>
-                <option value="Colchester">Colchester</option>
-                <option value="Coventry">Coventry</option>
-                <option value="Crystal Palace">Crystal Palace</option>
-                <option value="Everton">Everton </option>
-                <option value="Hull">Hull</option>
-                <option value="Ipswich">Ipswich</option>
-                <option value="Leicester">Leicester</option>
-                <option value="Liverpool">Liverpool </option>
-                <option value="Man City">Man City  </option>
-                <option value="Man Utd">Man Utd</option>
-                <option value="Middlesbrough">Middlesbrough  </option>
-                <option value="Newcastle">Newcastle </option>
-                <option value="Norwich">Norwich</option> 
-                <option value="Plymouth">Plymouth</option>
-                <option value="Portsmouth">Portsmouth </option>
-                <option value="Preston">Preston</option>
-                <option value="QPR">QPR</option>
-                <option value="Scunthorpe">Scunthorpe</option>
-                <option value="Sheff Utd">Sheff Utd</option>
-                <option value="Sheff Wed">Sheff Wed</option>
-                <option value="Southampton">Southampton</option>
-                <option value="Stoke">Stoke</option>
-                <option value="Sunderland">Sunderland</option>
-                <option value="Tottenham">Tottenham </option>
-                <option value="Watford">Watford</option>
-                <option value="West Brom">West Brom</option>
-                <option value="West Ham">West Ham </option>
-                <option value="Wigan">Wigan </option>
-                <option value="Wolverhampton">Wolverhampton</option>           
+            <optgroup label="Clubs">                   
+                {% for t in tags %}   
+                <option value="{{t}}">{{t}}</option> 
+                {% endfor %}                
             </optgroup>
             <optgroup label="International">
+                <option value="Rep of Ireland">Brazil</option>
                  <option value="England">England</option>
-                 <option value="Scotland">Scotland</option>
-                 <option value="Wales">Wales</option>
-                 <option value="N.Ireland">N.Ireland</option>
-                 <option value="Rep of Ireland">Rep of Ireland</option>
-                 <option value="Rep of Ireland">Italy</option>
-                 <option value="Rep of Ireland">Spain</option>
                  <option value="Rep of Ireland">Holland</option>
-                 <option value="Rep of Ireland">Brazil</option>
+                 <option value="Rep of Ireland">Italy</option>
+                 <option value="N.Ireland">N.Ireland</option>
+                 <option value="Portugal">Portugal</option>
+                 <option value="Rep of Ireland">Rep of Ireland</option>
+                 <option value="Scotland">Scotland</option>
+                 <option value="Rep of Ireland">Spain</option>
+                 <option value="Wales">Wales</option>         
                  <option value="Rep of Ireland">Other International</option>
             </optgroup>
     </select></label>
     <label><span>&nbsp;</span><input type="submit" value="Buzz it" /></label>
     </div>
+
 
 
 
