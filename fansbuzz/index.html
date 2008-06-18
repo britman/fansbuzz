@@ -8,7 +8,7 @@
     <a href="/item" id="post"><image src="/images/add.png" /> Post a story</a> 
     <div class="sectionheadline">Hot off the press {{ tag }}<!--Lastest Buzz {{ tag }} --><a href="{{ rss_url }}"><img src="/images/rss.png" /></a></div>
     {% for item in items %}
-      <div class="headline"><a href="{{ item.Url|escape }}">{{ item.Title|escape }}</a></div>
+      <div class="headline"><a href="{{ item.Url|escape }}">{{ item.Title }}</a></div>
       <div  class="source">Source: {{ item.Url|urlizetrunc:50 }}</div>
       <div class="para">Posted by {{item.Author.nickname}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
           <ul class="tags">

@@ -30,7 +30,7 @@ class MainController(webapp.RequestHandler):
         rss_url = "?mode=RSS"
         tag_label = ""
     else:
-        items_query = db.GqlQuery("SELECT * FROM Item WHERE Tags = :1", tag)
+        items_query = db.GqlQuery("SELECT * FROM Item WHERE Tags = :1 ORDER BY Posted_at DESC", tag)
         page_url = "?tag=" + tag + "&start="
         back_page_url = page_url
         rss_url = "?tag=" + tag + "&mode=RSS"

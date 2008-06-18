@@ -10,14 +10,21 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
-# Used 2 times in query history.
+# Used 148 times in query history.
 - kind: Item
   properties:
   - name: Posted_at
     direction: desc
 
-# Unused in query history -- copied from input.
+# Used 2 times in query history.
 - kind: Item
   properties:
-  - name: posted_at
+  - name: Tags
+  - name: Posted_at
+
+# Used 6 times in query history.
+- kind: Item
+  properties:
+  - name: Tags
+  - name: Posted_at
     direction: desc
