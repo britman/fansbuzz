@@ -2,15 +2,19 @@
 
 {% block rssfeed %}
 <link href="{{ rss_url }}" rel="alternate" type="application/rss+xml" title="FansBuzz RSS Feed {{tag}}" />
+<script>
+    function process(dd)
+    {
+        window.location = "?tag=" + dd.value;
+    }
+</script>
 {% endblock %}
 
 {% block content %}
-    <a href="/item" id="post"><image src="/images/add.png" /> Post a story</a> 
-    <div class="sectionheadline">Hot off the press {{ tag }}<!--Lastest Buzz {{ tag }} --><a href="{{ rss_url }}"><img src="/images/rss.png" /></a></div>
+    <div class="sectionheadline introText">Hot off the press {{ tag }}<!--Lastest Buzz {{ tag }} --> <a href="{{ rss_url }}"><img src="/images/rss.png" /></a></div>
     {% for item in items %}
-      <div class="headline"><a href="{{ item.Url|escape }}">{{ item.Title }}</a></div>
-      <div  class="source">Source: {{ item.Url|urlizetrunc:50 }}</div>
-      <div class="para">Posted by {{item.Author.nickname}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
+      <div class="headline"><a href="{{ item.Url|escape }}" target="_blank">{{ item.Title }}</a></div>
+      <div  class="source">Source: {{ item.Url|urlizetrunc:25 }} Posted by {{item.Author.nickname}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
           <ul class="tags">
           <li>tags:</li>
           {% for tag in item.Tags %}
@@ -18,7 +22,6 @@
           {% endfor %}
           </ul>
       <div class="para"><a href="/comment?item={{ item.Title|escape }}&k={{ item.key }}">{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}</a></div>
-      <div class="spacer"></div>
       
       <ul class="social">
         <li>Share this item:</li>
@@ -46,14 +49,225 @@
  <div class="largespacer"></div>
      
     {% endfor %}
-    <div class="para">
-    {% if back_page_url %}
-        <a href="{{ back_page_url }}"><< Previous</a> 
-    {% endif %}
     
-    {% if page_url %}
-        more stories: <a href="{{ page_url }}">Next >></a> 
-    {% endif %}
+    {% if items %}
+        <div class="para">
+        {% if back_page_url %}
+            <a href="{{ back_page_url }}"><< Previous</a> 
+        {% endif %}
+        
+        {% if page_url %}
+            more stories: <a href="{{ page_url }}">Next >></a> 
+        {% endif %}
+        </div>
+    {% else %}
+        There are currently no FansBuzz stories for {{tag}}. <a href="/item">Be the first to post a story.</a>
+      {% endif %}  
+   
+{% endblock %}
+
+{% block tags %}
+<div class="introText">
+View by tag: <select name="Tags" onchange="process(this)">
+            <option value="" selected="True">--- Select a tag ---</option>
+            <optgroup label="General">
+                <option value="General">General</option>
+                <option value="Gossip">Gossip</option>
+                <option value="Match Day">Match Day</option>
+                <option value="Transfer">Transfer</option>
+            </optgroup>
+            <optgroup label="Clubs">                   
+                   
+                <option value="Accrington Stanley">Accrington Stanley</option> 
+                   
+                <option value="Arsenal">Arsenal</option> 
+                   
+                <option value="Aston Villa">Aston Villa</option> 
+                   
+                <option value="Barnet">Barnet</option> 
+                   
+                <option value="Barnsley">Barnsley</option> 
+                   
+                <option value="Blackburn">Blackburn</option> 
+                   
+                <option value="Blackpool">Blackpool</option> 
+                   
+                <option value="Bolton">Bolton</option> 
+                   
+                <option value="Bournemouth">Bournemouth</option> 
+                   
+                <option value="Bradford">Bradford</option> 
+                   
+                <option value="Brentford">Brentford</option> 
+                   
+                <option value="Brighton">Brighton</option> 
+                   
+                <option value="Bristol City">Bristol City</option> 
+                   
+                <option value="Bristol Rovers">Bristol Rovers</option> 
+                   
+                <option value="Burnley">Burnley</option> 
+                   
+                <option value="Bury">Bury</option> 
+                   
+                <option value="Cardiff">Cardiff</option> 
+                   
+                <option value="Carlisle">Carlisle</option> 
+                   
+                <option value="Charlton">Charlton</option> 
+                   
+                <option value="Chelsea">Chelsea</option> 
+                   
+                <option value="Cheltenham">Cheltenham</option> 
+                   
+                <option value="Chester">Chester</option> 
+                   
+                <option value="Chesterfield">Chesterfield</option> 
+                   
+                <option value="Colchester">Colchester</option> 
+                   
+                <option value="Coventry">Coventry</option> 
+                   
+                <option value="Crewe">Crewe</option> 
+                   
+                <option value="Crystal Palace">Crystal Palace</option> 
+                   
+                <option value="Dag & Red">Dag & Red</option> 
+                   
+                <option value="Darlington">Darlington</option> 
+                   
+                <option value="Doncaster">Doncaster</option> 
+                   
+                <option value="Everton">Everton</option> 
+                   
+                <option value="Gillingham">Gillingham</option> 
+                   
+                <option value="Grimsby">Grimsby</option> 
+                   
+                <option value="Hartlepool">Hartlepool</option> 
+                   
+                <option value="Hereford">Hereford</option> 
+                   
+                <option value="Huddersfield">Huddersfield</option> 
+                   
+                <option value="Hull">Hull</option> 
+                   
+                <option value="Ipswich">Ipswich</option> 
+                   
+                <option value="Leeds">Leeds</option> 
+                   
+                <option value="Leicester">Leicester</option> 
+                   
+                <option value="Leyton Orient">Leyton Orient</option> 
+                   
+                <option value="Lincoln City">Lincoln City</option> 
+                   
+                <option value="Liverpool">Liverpool</option> 
+                   
+                <option value="Luton">Luton</option> 
+                   
+                <option value="Macclesfield">Macclesfield</option> 
+                   
+                <option value="Man City ">Man City </option> 
+                   
+                <option value="Man Utd">Man Utd</option> 
+                   
+                <option value="Mansfield">Mansfield</option> 
+                   
+                <option value="Middlesbrough ">Middlesbrough </option> 
+                   
+                <option value="Millwall">Millwall</option> 
+                   
+                <option value="Milton Keynes Dons">Milton Keynes Dons</option> 
+                   
+                <option value="Morecambe">Morecambe</option> 
+                   
+                <option value="Newcastle">Newcastle</option> 
+                   
+                <option value="Northampton">Northampton</option> 
+                   
+                <option value="Norwich">Norwich</option> 
+                   
+                <option value="Nottm Forest">Nottm Forest</option> 
+                   
+                <option value="Notts County">Notts County</option> 
+                   
+                <option value="Oldham">Oldham</option> 
+                   
+                <option value="Peterborough">Peterborough</option> 
+                   
+                <option value="Plymouth">Plymouth</option> 
+                   
+                <option value="Port Vale">Port Vale</option> 
+                   
+                <option value="Portsmouth">Portsmouth</option> 
+                   
+                <option value="Preston">Preston</option> 
+                   
+                <option value="QPR">QPR</option> 
+                   
+                <option value="Rochdale">Rochdale</option> 
+                   
+                <option value="Rotherham">Rotherham</option> 
+                   
+                <option value="Scunthorpe">Scunthorpe</option> 
+                   
+                <option value="Sheff Utd">Sheff Utd</option> 
+                   
+                <option value="Sheff Wed">Sheff Wed</option> 
+                   
+                <option value="Shrewsbury">Shrewsbury</option> 
+                   
+                <option value="Southampton">Southampton</option> 
+                   
+                <option value="Southend">Southend</option> 
+                   
+                <option value="Stockport">Stockport</option> 
+                   
+                <option value="Stoke">Stoke</option> 
+                   
+                <option value="Sunderland">Sunderland</option> 
+                   
+                <option value="Swansea">Swansea</option> 
+                   
+                <option value="Swindon">Swindon</option> 
+                   
+                <option value="Tottenham">Tottenham</option> 
+                   
+                <option value="Tranmere">Tranmere</option> 
+                   
+                <option value="Walsall">Walsall</option> 
+                   
+                <option value="Watford">Watford</option> 
+                   
+                <option value="West Brom">West Brom</option> 
+                   
+                <option value="West Ham">West Ham</option> 
+                   
+                <option value="Wigan">Wigan</option> 
+                   
+                <option value="Wolverhampton">Wolverhampton</option> 
+                   
+                <option value="Wrexham">Wrexham</option> 
+                   
+                <option value="Wycombe">Wycombe</option> 
+                   
+                <option value="Yeovil">Yeovil</option> 
+                                
+            </optgroup>
+            <optgroup label="International">
+                <option value="Rep of Ireland">Brazil</option>
+                 <option value="England">England</option>
+                 <option value="Rep of Ireland">Holland</option>
+                 <option value="Rep of Ireland">Italy</option>
+                 <option value="N.Ireland">N.Ireland</option>
+                 <option value="Portugal">Portugal</option>
+                 <option value="Rep of Ireland">Rep of Ireland</option>
+                 <option value="Scotland">Scotland</option>
+                 <option value="Rep of Ireland">Spain</option>
+                 <option value="Wales">Wales</option>         
+                 <option value="Rep of Ireland">Other International</option>
+            </optgroup>
+    </select>
     </div>
-    
 {% endblock %}

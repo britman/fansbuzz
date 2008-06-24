@@ -109,7 +109,6 @@ text-decoration:none;
 .sectionheadline {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size:24px;
-	margin-top: 5px; margin-bottom: 0px;
     font-weight: 900;
     color: #222;
 }
@@ -120,6 +119,11 @@ text-decoration:none;
 	margin-top: 5px; margin-bottom: 0px;
     font-weight: normal;
     color: #222;
+
+    }
+    
+.headline a:hover {
+    color: Yellow;
 
     }
     
@@ -147,8 +151,18 @@ text-decoration:none;
 .introText {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size:20px;
-    margin:20px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-right: 5px;
     padding:10px;
+    background:#FCFAE1;
+    border-style: dashed;     
+    border-width: 1px;       
+    border-color: #000; 
+}
+
+.headerStyle
+{
     background:#FCFAE1;
     border-style: dashed;     
     border-width: 1px;       

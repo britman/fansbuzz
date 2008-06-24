@@ -34,7 +34,7 @@ class MainController(webapp.RequestHandler):
         page_url = "?tag=" + tag + "&start="
         back_page_url = page_url
         rss_url = "?tag=" + tag + "&mode=RSS"
-        tag_label = "tag: " + tag
+        tag_label = " : " + tag
         
     items_count = items_query.count()
     items = items_query.fetch(items_to_display,start)

@@ -10,7 +10,7 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
-# Used 148 times in query history.
+# Used 276 times in query history.
 - kind: Item
   properties:
   - name: Posted_at
@@ -22,7 +22,7 @@ indexes:
   - name: Tags
   - name: Posted_at
 
-# Used 6 times in query history.
+# Used 76 times in query history.
 - kind: Item
   properties:
   - name: Tags
