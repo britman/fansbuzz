@@ -59,7 +59,7 @@ class MainController(webapp.RequestHandler):
       url_linktext = 'Logout'
     else:
       url = users.create_login_url(self.request.uri)
-      url_linktext = 'Login'
+      url_linktext = 'Already got a google account...login here!'
 
     template_values = {
       'items': items,
