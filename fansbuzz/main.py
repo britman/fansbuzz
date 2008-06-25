@@ -181,11 +181,17 @@ class CommentController(webapp.RequestHandler):
         redir = users.create_login_url("/")
         self.redirect(redir)
     
-   
-
+class ClickController(webapp.RequestHandler):
+  def get(self): 
+      self.redirect("/")
+      
+  def post(self):        
+      item = models.Item.get(self.request.get('id'))
+      item.add_click()
+    
 def main():
   logging.getLogger().setLevel(logging.DEBUG)
-  application = webapp.WSGIApplication([('/', MainController),('/item', ItemController),('/comment', CommentController),('/Tag/.*', MainController)],debug=True)
+  application = webapp.WSGIApplication([('/', MainController),('/item', ItemController),('/comment', CommentController),('/Tag/.*', MainController),('/click', ClickController)],debug=True)
   wsgiref.handlers.CGIHandler().run(application)
 
 

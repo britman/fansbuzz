@@ -2,7 +2,18 @@
 
 {% block rssfeed %}
 <link href="{{ rss_url }}" rel="alternate" type="application/rss+xml" title="FansBuzz RSS Feed {{tag}}" />
-<script>
+<script>  
+    // Load jQuery  
+    google.load("jquery", "1");
+    
+    google.setOnLoadCallback(function() {
+       $(".newsLink").click(function(e) {               
+             $.post("click", {id: this.id}, function(xml) {              
+               
+             });
+       });
+    });
+    
     function process(dd)
     {
         window.location = "?tag=" + dd.value;
@@ -11,10 +22,10 @@
 {% endblock %}
 
 {% block content %}
-    <div class="sectionheadline introText">Hot off the press {{ tag }}<!--Lastest Buzz {{ tag }} --> <a href="{{ rss_url }}"><img src="/images/rss.png" /></a></div>
+    <div class="sectionheadline introText">Hot off the press - the latest stories as they happen {{ tag }}<!--Lastest Buzz {{ tag }} --> <a href="{{ rss_url }}"><img src="/images/rss.png" /></a></div>
     {% for item in items %}
-      <div class="headline"><a href="{{ item.Url|escape }}" target="_blank">{{ item.Title }}</a></div>
-      <div  class="source">Source: {{ item.Url|urlizetrunc:25 }} Posted by {{item.Author.nickname}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
+      <div class="headline"><a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.Title }}</a></div>
+      <div class="source">Source: <a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.source }}</a> Posted by: {{item.Author.nickname}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
           <ul class="tags">
           <li>tags:</li>
           {% for tag in item.Tags %}

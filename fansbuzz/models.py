@@ -9,6 +9,32 @@ class Item(db.Model):
   Posted_at = db.DateTimeProperty(auto_now_add=True)
   Tags = db.StringListProperty()
   Url = db.LinkProperty()
+  ClickCount = db.IntegerProperty()
+  
+  def source(self):
+    iscom = self.Url.find('.com')
+    iscouk = self.Url.find('.co.uk')
+    isnet = self.Url.find('.net')
+    if iscom != -1:
+        return self.Url[0:iscom+4]
+    elif iscouk != -1:
+        return self.Url[0:iscouk+6]
+    elif isnet != -1:
+        return self.Url[0:iscouk+4]
+    else:
+        urlLength = len(self.Url)
+        if urlLength < 25:
+            return self.Url[0:urlLength]
+        else:
+            return self.Url[0:25]
+            
+  def add_click(self):
+    if self.ClickCount == None:
+      self.ClickCount = 1
+    else:
+      self.ClickCount = self.ClickCount + 1    
+    self.put()
+  
   
 class ItemForm(djangoforms.ModelForm):
   class Meta:
