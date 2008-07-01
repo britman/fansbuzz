@@ -17,35 +17,33 @@ class MainController(webapp.RequestHandler):
     mode = self.request.get('mode')
     type = self.request.get('type')
     
+    path = self.request.path_info.replace('%20',' ')
+    if (path.find('/tag/') == 0):
+	  tag = path[5:]
+
     try:
         start = int(self.request.get('start'))
     except ValueError:
         start = 0
         
     logging.debug('tag=' + tag)
+
     items_to_display = 10
     if tag == "":
         if type == "buzz":
-            items_query = db.GqlQuery("SELECT * FROM Item ORDER BY ClickCount DESC")
-            page_url = "?start="
-            back_page_url = page_url
-            rss_url = "?mode=RSS"
-            tag_label = ""
+            items_query = db.GqlQuery("SELECT * FROM Item ORDER BY ClickCount DESC")          
         else:
-            items_query = db.GqlQuery("SELECT * FROM Item ORDER BY Posted_at DESC")
-            page_url = "?start="
-            back_page_url = page_url
-            rss_url = "?mode=RSS"
-            tag_label = ""
+            items_query = db.GqlQuery("SELECT * FROM Item ORDER BY Posted_at DESC")           
+        tag_label = ""
     else:
         items_query = db.GqlQuery("SELECT * FROM Item WHERE Tags = :1 ORDER BY Posted_at DESC", tag)
-        page_url = "?tag=" + tag + "&start="
-        back_page_url = page_url
-        rss_url = "?tag=" + tag + "&mode=RSS"
         tag_label = " : " + tag
-        
+    
+    page_url = "?start="    
     items_count = items_query.count()
     items = items_query.fetch(items_to_display,start)
+    back_page_url = page_url
+    rss_url = "?mode=RSS"
     
     nextPageStart = items_to_display + start
     previousPageStart = start - items_to_display
@@ -199,7 +197,7 @@ class ClickController(webapp.RequestHandler):
     
 def main():
   logging.getLogger().setLevel(logging.DEBUG)
-  application = webapp.WSGIApplication([('/', MainController),('/item', ItemController),('/comment', CommentController),('/Tag/.*', MainController),('/click', ClickController)],debug=True)
+  application = webapp.WSGIApplication([('/', MainController),('/item', ItemController),('/comment', CommentController),('/tag/.*', MainController),('/click', ClickController)],debug=True)
   wsgiref.handlers.CGIHandler().run(application)
 
 

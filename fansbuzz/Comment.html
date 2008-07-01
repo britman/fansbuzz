@@ -9,7 +9,7 @@
           <ul class="tags">
           <li>tags:</li>
           {% for tag in item.Tags %}
-          <li><a href="/?tag={{ tag|escape }}">{{ tag|escape }}</a></li>
+          <li><a href="/tag/{{ tag|escape }}">{{ tag|escape }}</a></li>
           {% endfor %}
           </ul>
           

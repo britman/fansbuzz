@@ -17,7 +17,7 @@ indexes:
   - name: ClickCount
     direction: desc
 
-# Used 616 times in query history.
+# Used 618 times in query history.
 - kind: Item
   properties:
   - name: Posted_at

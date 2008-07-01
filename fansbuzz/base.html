@@ -13,14 +13,14 @@
     
     google.setOnLoadCallback(function() {
        $(".newsLink").click(function(e) {               
-             $.post("click", {id: this.id}, function(xml) {              
+             $.post("/click", {id: this.id}, function(xml) {              
              });
        });
     });
     
     function process(dd)
     {
-        window.location = "?tag=" + dd.value;
+        window.location = "/tag/" + dd.value;
     }
 </script>
     {% block rssfeed %}{% endblock %}

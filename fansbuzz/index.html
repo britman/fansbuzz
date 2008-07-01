@@ -12,7 +12,7 @@
           <ul class="tags">
           <li>tags:</li>
           {% for tag in item.Tags %}
-          <li><a href="?tag={{ tag|escape }}">{{ tag|escape }}</a></li>
+          <li><a href="/tag/{{ tag|escape }}">{{ tag|escape }}</a></li>
           {% endfor %}
           </ul>
       <div class="para"><a href="/comment?item={{ item.Title|escape }}&k={{ item.key }}">{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}</a></div>
