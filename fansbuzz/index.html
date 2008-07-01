@@ -2,23 +2,6 @@
 
 {% block rssfeed %}
 <link href="{{ rss_url }}" rel="alternate" type="application/rss+xml" title="FansBuzz RSS Feed {{tag}}" />
-<script>  
-    // Load jQuery  
-    google.load("jquery", "1");
-    
-    google.setOnLoadCallback(function() {
-       $(".newsLink").click(function(e) {               
-             $.post("click", {id: this.id}, function(xml) {              
-               
-             });
-       });
-    });
-    
-    function process(dd)
-    {
-        window.location = "?tag=" + dd.value;
-    }
-</script>
 {% endblock %}
 
 {% block content %}

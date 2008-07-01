@@ -4,9 +4,8 @@
 
 {% block content %}
     
-      <div class="headline"><a href="{{ item.Url|escape }}">{{ item.Title|escape }}</a></div>
-      <div  class="source">Source: {{ item.Url|urlizetrunc:50 }}</div>
-      <div class="para">Posted by {{item.Author.nickname}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
+     <div class="headline"><a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.Title }}</a></div>
+      <div class="source">Source: <a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.source }}</a> Posted by: {{item.Author.nickname}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
           <ul class="tags">
           <li>tags:</li>
           {% for tag in item.Tags %}
@@ -70,7 +69,7 @@
     <label><span>&nbsp;</span><input type="submit" value="Add comment" /></label>
 
     {% else %}
-        <div><a href="{{ url }}" class="auth">Log in to post a comment</a></div>
+        <div><a href="{{ url }}" class="auth">Login to post a comment</a></div>
     {% endif %}   
     </div>
 

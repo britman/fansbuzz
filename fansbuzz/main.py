@@ -15,6 +15,7 @@ class MainController(webapp.RequestHandler):
   def get(self):
     tag = self.request.get('tag')
     mode = self.request.get('mode')
+    type = self.request.get('type')
     
     try:
         start = int(self.request.get('start'))
@@ -24,11 +25,18 @@ class MainController(webapp.RequestHandler):
     logging.debug('tag=' + tag)
     items_to_display = 10
     if tag == "":
-        items_query = models.Item.all().order('-Posted_at')
-        page_url = "?start="
-        back_page_url = page_url
-        rss_url = "?mode=RSS"
-        tag_label = ""
+        if type == "buzz":
+            items_query = db.GqlQuery("SELECT * FROM Item ORDER BY ClickCount DESC")
+            page_url = "?start="
+            back_page_url = page_url
+            rss_url = "?mode=RSS"
+            tag_label = ""
+        else:
+            items_query = db.GqlQuery("SELECT * FROM Item ORDER BY Posted_at DESC")
+            page_url = "?start="
+            back_page_url = page_url
+            rss_url = "?mode=RSS"
+            tag_label = ""
     else:
         items_query = db.GqlQuery("SELECT * FROM Item WHERE Tags = :1 ORDER BY Posted_at DESC", tag)
         page_url = "?tag=" + tag + "&start="

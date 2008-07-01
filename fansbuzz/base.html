@@ -7,6 +7,22 @@
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/grids/grids-min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
     <script src="http://www.google.com/jsapi"></script>
+    <script>  
+    // Load jQuery  
+    google.load("jquery", "1");
+    
+    google.setOnLoadCallback(function() {
+       $(".newsLink").click(function(e) {               
+             $.post("click", {id: this.id}, function(xml) {              
+             });
+       });
+    });
+    
+    function process(dd)
+    {
+        window.location = "?tag=" + dd.value;
+    }
+</script>
     {% block rssfeed %}{% endblock %}
 </head>
 <body>
