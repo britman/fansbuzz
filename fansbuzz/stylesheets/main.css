@@ -58,16 +58,16 @@ div.box input .input-text{
 }
 
 .formbtn{
-background:url(img/green.gif);
-padding:0px 6px;
-border:1px solid #3b6e22;
-height:24px; 
-line-height:24px;
-color:#FFFFFF;
-font-size:12px;
-margin-right:10px;
-display:inline-block;
-text-decoration:none;
+    background:url(img/green.gif);
+    padding:0px 6px;
+    border:1px solid #3b6e22;
+    height:24px; 
+    line-height:24px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin-right:10px;
+    display:inline-block;
+    text-decoration:none;
 }
 
 .tags, .social
@@ -194,6 +194,37 @@ text-decoration:none;
 .yui-g ,#hd img, #ft{
     margin:auto 20px !important;
 }
+
+#hd {
+    background:#FCFAE1;
+    border-style: solid;     
+    border-width: 0px 0px 1px 0px;       
+    border-color: #000; 
+}
+
+#topNav{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+    margin-left:300px;
+}
+
+#topNav li {
+    display: inline;
+    border-style: solid;     
+    border-width: 1px 1px 1px 1px;       
+    border-color: #000; 
+    border-bottom-color: #FCFAE1;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size:24px;
+    margin-left:10px;
+    padding:5px 5px 0px 5px;
+}
+#topNav li.navSel {
+    background-color:#fff;
+    border-bottom-color: #fff;
+}
+
 
 #legal {
    color:#ccc;

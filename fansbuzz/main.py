@@ -10,6 +10,7 @@ from google.appengine.ext import db
 from google.appengine.ext.webapp import template
 from google.appengine.api import users
 from datetime import datetime
+from datetime import timedelta
 
 class MainController(webapp.RequestHandler):
   def get(self):
@@ -27,24 +28,42 @@ class MainController(webapp.RequestHandler):
         start = 0
         
     logging.debug('tag=' + tag)
-
+    
+    #nav selector classes
+    buzzNavClass = ''
+    newNavClass = ''
+    
     items_to_display = 10
     if tag == "":
-        if type == "buzz":
-            items_query = db.GqlQuery("SELECT * FROM Item ORDER BY ClickCount DESC")          
+        if type == "buzz":        
+            items_query = db.GqlQuery('SELECT * FROM Item ORDER BY ClickCount DESC, Posted_at DESC')   
+            headline = 'Latest buzz in the last 24 hours'
+            buzzNavClass = 'navSel'
         else:
-            items_query = db.GqlQuery("SELECT * FROM Item ORDER BY Posted_at DESC")           
+            items_query = db.GqlQuery('SELECT * FROM Item ORDER BY Posted_at DESC')    
+            headline = 'Hot off the press - the latest stories as they happen'     
+            newNavClass = 'navSel'
         tag_label = ""
     else:
-        items_query = db.GqlQuery("SELECT * FROM Item WHERE Tags = :1 ORDER BY Posted_at DESC", tag)
+        items_query = db.GqlQuery('SELECT * FROM Item WHERE Tags = :1 ORDER BY Posted_at DESC', tag)
         tag_label = " : " + tag
     
     page_url = "?start="    
     items_count = items_query.count()
     items = items_query.fetch(items_to_display,start)
+    rss_url = "?mode=RSS"       
+   
+
+    if type == "buzz":     
+        #filter last 24 hours
+        compDate=datetime.now() 
+        t = timedelta(days=1)
+        items = [elem for elem in items if elem.Posted_at >= compDate-t]   
+        items_count = len(items)
+        rss_url = rss_url + "&type=buzz" 
+ 
     back_page_url = page_url
-    rss_url = "?mode=RSS"
-    
+
     nextPageStart = items_to_display + start
     previousPageStart = start - items_to_display
     
@@ -75,6 +94,9 @@ class MainController(webapp.RequestHandler):
       'url_linktext': url_linktext,
       'rss_url': rss_url,
       'tag': tag_label,      
+      'headline': headline,
+      'newNavClass': newNavClass,
+      'buzzNavClass': buzzNavClass,
       }
 
     if mode == "RSS":

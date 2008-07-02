@@ -11,32 +11,68 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
-# Unused in query history -- copied from input.
+# Used 16 times in query history.
+- kind: Item
+  properties:
+  - name: ClickCount
+  - name: Posted_at
+    direction: desc
+
+# Used 44 times in query history.
 - kind: Item
   properties:
   - name: ClickCount
     direction: desc
 
-# Used 508 times in query history.
+# Used 26 times in query history.
 - kind: Item
   properties:
-  - name: Posted_at
-    direction: desc
-
-# Unused in query history -- copied from input.
-- kind: Item
-  properties:
-  - name: Tags
   - name: ClickCount
     direction: desc
+  - name: Posted_at
+    direction: desc
 
-# Unused in query history -- copied from input.
+# Used 4 times in query history.
 - kind: Item
   properties:
-  - name: Tags
   - name: Posted_at
+  - name: ClickCount
 
 # Used 2 times in query history.
+- kind: Item
+  properties:
+  - name: Posted_at
+  - name: ClickCount
+    direction: desc
+
+# Used 634 times in query history.
+- kind: Item
+  properties:
+  - name: Posted_at
+    direction: desc
+
+# Used 6 times in query history.
+- kind: Item
+  properties:
+  - name: Posted_at
+    direction: desc
+  - name: ClickCount
+    direction: desc
+
+# Unused in query history -- copied from input.
+- kind: Item
+  properties:
+  - name: Tags
+  - name: ClickCount
+    direction: desc
+
+# Unused in query history -- copied from input.
+- kind: Item
+  properties:
+  - name: Tags
+  - name: Posted_at
+
+# Used 4 times in query history.
 - kind: Item
   properties:
   - name: Tags

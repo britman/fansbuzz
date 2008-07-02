@@ -27,9 +27,14 @@
 </head>
 <body>
 <div id="doc3" class="yui-t5">
-   <div id="hd" style="background:#FCFAE1">
+   <div id="hd">
     <a href="{{ url }}" style="float:right;margin-right:5px;margin-top:10px;">{{ url_linktext }}</a>
     <a href="/"><img src="/images/logo.png" alt="FansBuzz - your team, your news" /></a>
+    <ul id="topNav">
+        <li class="{{newNavClass}}"><a href="/">new</a></li>
+        <li class="{{buzzNavClass}}"><a href="/?type=buzz">buzz</a></li>
+        
+    </ul>
    </div>
    <div id="bd">
 	<div id="yui-main">
