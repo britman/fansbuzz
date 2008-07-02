@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>FansBuzz RSS Feed {{tag}}</title>
+    <title>FansBuzz {{headline}} RSS Feed</title>
     <link>{{url|escape}}</link>
     <description>FansBuzz - your team, your news</description>
     <language>en-gb</language>
