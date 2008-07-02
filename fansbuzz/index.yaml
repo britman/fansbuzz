@@ -18,13 +18,13 @@ indexes:
   - name: Posted_at
     direction: desc
 
-# Used 44 times in query history.
+# Used 54 times in query history.
 - kind: Item
   properties:
   - name: ClickCount
     direction: desc
 
-# Used 26 times in query history.
+# Used 46 times in query history.
 - kind: Item
   properties:
   - name: ClickCount
@@ -45,7 +45,7 @@ indexes:
   - name: ClickCount
     direction: desc
 
-# Used 634 times in query history.
+# Used 640 times in query history.
 - kind: Item
   properties:
   - name: Posted_at
@@ -72,7 +72,7 @@ indexes:
   - name: Tags
   - name: Posted_at
 
-# Used 4 times in query history.
+# Used 26 times in query history.
 - kind: Item
   properties:
   - name: Tags

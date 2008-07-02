@@ -46,6 +46,7 @@ class MainController(webapp.RequestHandler):
         tag_label = ""
     else:
         items_query = db.GqlQuery('SELECT * FROM Item WHERE Tags = :1 ORDER BY Posted_at DESC', tag)
+        headline = 'All the news for ' + tag  
         tag_label = " : " + tag
     
     page_url = "?start="    

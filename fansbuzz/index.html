@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="sectionheadline introText">{{headline}} {{ tag }}<!--Lastest Buzz {{ tag }} --> <a href="{{ rss_url }}"><img src="/images/rss.png" /></a></div>
+    <div class="sectionheadline introText">{{headline}} <a href="{{ rss_url }}"><img src="/images/rss.png" /></a></div>
     {% for item in items %}
       <div class="headline"><a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.Title }}</a></div>
       <div class="source">Source: <a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.source }}</a> Posted by: {{item.Author.nickname}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
@@ -64,9 +64,6 @@
 <div class="introText">
 View by tag: <select name="Tags" onchange="process(this)">
             <option value="" selected="True">--- Select a tag ---</option>
-            <optgroup label="Sport">
-                <option value="Football">Football</option>
-            </optgroup>
             <optgroup label="General">
                 <option value="General">General</option>
                 <option value="Gossip">Gossip</option>
