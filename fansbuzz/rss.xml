@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss">
+<?xml version="1.0"?>
+<rss version="2.0">
   <channel>
     <title>FansBuzz RSS Feed {{tag}}</title>
     <link>{{url|escape}}</link>
     <description>FansBuzz - your team, your news</description>
     <language>en-gb</language>
-    <lastBuildDate>{{ build_date }}</lastBuildDate>
+    <pubDate>{{ build_date|date:"r" }}</pubDate>
+    <lastBuildDate>{{ build_date|date:"r" }}</lastBuildDate>
     <copyright>Copyright: (C) Loopwitch 2008</copyright>
     <ttl>15</ttl>
     {% for item in items %}
@@ -13,11 +14,10 @@
       <title>{{ item.Title|escape }}</title>
       <link>http://fansbuzz.com/comment?k={{ item.key }}</link>
       <comments>http://www.fansbuzz.com/comment?k={{ item.key }}</comments>
-      <guid isPermaLink="false">http://www.fansbuzz.com/comment?k={{ item.key }}</guid>
-      <pubDate>{{item.Posted_at}}</pubDate>
-      {% for tag in item.Tags %}
-          <category>{{ tag|escape }}</category> 
-     {% endfor %}
+      <guid>http://www.fansbuzz.com/comment?k={{ item.key }}</guid>
+      <pubDate>{{item.Posted_at|date:"r"}}</pubDate>
+      {% for tag in item.Tags %}<category>{{ tag|escape }}</category>
+      {% endfor %}
     </item>
     {% endfor %}
   </channel>
