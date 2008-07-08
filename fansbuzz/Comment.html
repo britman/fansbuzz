@@ -5,7 +5,7 @@
 {% block content %}
     
      <div class="headline"><a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.Title }}</a></div>
-      <div class="source">Source: <a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.source }}</a> Posted by: {{item.Author.nickname}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
+      <div class="source">Source: <a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.source }}</a> Posted by: {{item.created_by}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
           <ul class="tags">
           <li>tags:</li>
           {% for tag in item.Tags %}
@@ -44,7 +44,7 @@
      <hr />
      {% for comment in item.comment_set %}
         <div class="comment">{{ comment.Comment|escape }}</div>
-        <div class="para">Posted by {{comment.Author.nickname}} @{{comment.Posted_at}}</div>
+        <div class="para">Posted by {{comment.created_by}} @{{comment.Posted_at}}</div>
       {% endfor %}
      
      {% ifequal item.comment_set.count 0 %}
@@ -65,7 +65,7 @@
     <form method="POST" action="/comment?k={{item.key}}">
     <div class="box">
     {% if loggedin %}
-    <label for="id_name"><span>Post a comment:</span> {{ form.Comment }}</label>
+    <label for="id_name"><span>Post a comment:</span> <textarea name="Comment" id="id_Comment" rows="10" cols="55"></textarea></label>
     <label><span>&nbsp;</span><input type="submit" value="Add comment" /></label>
 
     {% else %}

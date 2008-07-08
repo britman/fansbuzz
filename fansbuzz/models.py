@@ -11,6 +11,13 @@ class Item(db.Model):
   Url = db.LinkProperty()
   ClickCount = db.IntegerProperty()
   
+  def created_by(self):
+    isemail = self.Author.nickname().find('@')
+    if isemail != -1:
+        return self.Author.nickname()[:isemail]
+    else:
+        return self.Author.nickname()
+  
   def source(self):
     iscom = self.Url.find('.com')
     iscouk = self.Url.find('.co.uk')
@@ -46,6 +53,13 @@ class Comment(db.Model):
   Comment = db.TextProperty(required=True)
   Posted_at = db.DateTimeProperty(auto_now_add=True)
   Item = db.ReferenceProperty(Item)
+  
+  def created_by(self):
+    isemail = self.Author.nickname().find('@')
+    if isemail != -1:
+        return self.Author.nickname()[:isemail]
+    else:
+        return self.Author.nickname()
   
 class CommentForm(djangoforms.ModelForm):
   class Meta:
