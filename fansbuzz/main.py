@@ -35,33 +35,41 @@ class MainController(webapp.RequestHandler):
     
     items_to_display = 10
     if tag == "":
-        if type == "buzz":        
-            items_query = db.GqlQuery('SELECT * FROM Item ORDER BY ClickCount DESC, Posted_at DESC')   
+        if type == "buzz":   
+            #get all the items in the last 24 hours
+            #filter through them to pull out those that have a click count < 0
+            #feed the id's back into a GQL query to pull out the list
+            compDate=datetime.now() 
+            t = timedelta(days=1)
+            items_query = db.GqlQuery('SELECT * FROM Item WHERE ClickCount > :1 ORDER BY ClickCount DESC, Posted_at DESC', 0)   
             headline = 'Latest buzz in the last 24 hours'
             buzzNavClass = 'navSel'
         else:
             items_query = db.GqlQuery('SELECT * FROM Item ORDER BY Posted_at DESC')    
             headline = 'Hot off the press - the latest stories as they happen'     
             newNavClass = 'navSel'
+ 
         tag_label = ""
     else:
         items_query = db.GqlQuery('SELECT * FROM Item WHERE Tags = :1 ORDER BY Posted_at DESC', tag)
         headline = 'All the news for ' + tag  
-        tag_label = " : " + tag
-    
-    page_url = "?start="    
+        tag_label = " : " + tag   
+      
     items_count = items_query.count()
-    items = items_query.fetch(items_to_display,start)
     rss_url = "?mode=RSS"       
-   
+    page_url = "?start=" 
 
     if type == "buzz":     
         #filter last 24 hours
         compDate=datetime.now() 
+        items = items_query.fetch(items_count)
         t = timedelta(days=1)
         items = [elem for elem in items if elem.Posted_at >= compDate-t]   
+        items = items[0:11]
         items_count = len(items)
         rss_url = rss_url + "&type=buzz" 
+    else:
+        items = items_query.fetch(items_to_display,start)
  
     back_page_url = page_url
 
