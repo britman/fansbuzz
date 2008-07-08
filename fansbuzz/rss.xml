@@ -13,7 +13,7 @@
     {% for item in items %}
     <item>
       <title>{{ item.Title|escape }}</title>
-      <link>http://fansbuzz.com/comment?k={{ item.key }}</link>
+      <link>http://www.fansbuzz.com/comment?k={{ item.key }}</link>
       <comments>http://www.fansbuzz.com/comment?k={{ item.key }}</comments>
       <guid>http://www.fansbuzz.com/comment?k={{ item.key }}</guid>
       <pubDate>{{item.Posted_at|date:"r"}}</pubDate>

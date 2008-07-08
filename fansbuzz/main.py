@@ -4,6 +4,7 @@ import os
 import models
 import logging
 import time, datetime
+import operator
 
 from google.appengine.ext import webapp
 from google.appengine.ext import db
@@ -35,13 +36,22 @@ class MainController(webapp.RequestHandler):
     
     items_to_display = 10
     if tag == "":
-        if type == "buzz":   
+        if type == "buzz":            
             #get all the items in the last 24 hours
-            #filter through them to pull out those that have a click count < 0
-            #feed the id's back into a GQL query to pull out the list
             compDate=datetime.now() 
             t = timedelta(days=1)
-            items_query = db.GqlQuery('SELECT * FROM Item WHERE ClickCount > :1 ORDER BY ClickCount DESC, Posted_at DESC', 0)   
+            items_keys_query = db.GqlQuery('SELECT * FROM Item  WHERE Posted_at > :1 ORDER BY Posted_at DESC',compDate-t)   
+            items_keys_count = items_keys_query.count()         
+            itemkeys = items_keys_query.fetch(items_keys_count,0)
+            
+            #filter through them to pull out those that have a click count > 0
+            buzzitems = [str(elem.key()) for elem in itemkeys if elem.ClickCount > 0]  
+            #number of items that will be available to paging
+            items_count = len(buzzitems)
+            
+            #feed the id's back into a GQL query to pull out the list
+            items = models.Item.get(buzzitems)
+            items.sort(key=operator.attrgetter('ClickCount'),reverse=True)
             headline = 'Latest buzz in the last 24 hours'
             buzzNavClass = 'navSel'
         else:
@@ -53,24 +63,18 @@ class MainController(webapp.RequestHandler):
     else:
         items_query = db.GqlQuery('SELECT * FROM Item WHERE Tags = :1 ORDER BY Posted_at DESC', tag)
         headline = 'All the news for ' + tag  
-        tag_label = " : " + tag   
-      
-    items_count = items_query.count()
-    rss_url = "?mode=RSS"       
-    page_url = "?start=" 
+        tag_label = " : " + tag        
 
-    if type == "buzz":     
-        #filter last 24 hours
-        compDate=datetime.now() 
-        items = items_query.fetch(items_count)
-        t = timedelta(days=1)
-        items = [elem for elem in items if elem.Posted_at >= compDate-t]   
-        items = items[0:11]
-        items_count = len(items)
-        rss_url = rss_url + "&type=buzz" 
+    if type == "buzz":      
+        items = items[start:start + 10]
+        rss_url = "?type=buzz&mode=RSS" 
+        page_url = "?type=buzz&start=" 
     else:
         items = items_query.fetch(items_to_display,start)
- 
+        items_count = items_query.count()
+        rss_url = "?mode=RSS"  
+        page_url = "?start=" 
+
     back_page_url = page_url
 
     nextPageStart = items_to_display + start
@@ -121,7 +125,8 @@ class MainController(webapp.RequestHandler):
     else:
         path = os.path.join(os.path.dirname(__file__), 'index.html')
         self.response.out.write(template.render(path, template_values)) 
-    
+
+
 class ItemController(webapp.RequestHandler):
   def get(self):
     logging.debug('entering item form')
