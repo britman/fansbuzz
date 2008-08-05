@@ -127,13 +127,21 @@ div.box input .input-text{
 
     }
     
+.description, .description a {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size:14px;
+	margin-top: 5px; margin-bottom: 0px;
+    font-weight: normal;
+    color: #222;
+
+    }
+    
 .comment {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size:18px;
 	margin-top: 5px; margin-bottom: 0px;
     font-weight: normal;
     color: #222;
-
     }
 
 .para {

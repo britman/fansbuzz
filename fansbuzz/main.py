@@ -50,8 +50,12 @@ class MainController(webapp.RequestHandler):
             items_count = len(buzzitems)
             
             #feed the id's back into a GQL query to pull out the list
-            items = models.Item.get(buzzitems)
-            items.sort(key=operator.attrgetter('ClickCount'),reverse=True)
+            if buzzitems:
+                items = models.Item.get(buzzitems)
+                items.sort(key=operator.attrgetter('ClickCount'),reverse=True)
+            else:
+                items = None
+            
             headline = 'Latest buzz in the last 24 hours'
             buzzNavClass = 'navSel'
         else:
@@ -66,7 +70,8 @@ class MainController(webapp.RequestHandler):
         tag_label = " : " + tag        
 
     if type == "buzz":      
-        items = items[start:start + 10]
+        if items:
+            items = items[start:start + 10]
         rss_url = "?type=buzz&mode=RSS" 
         page_url = "?type=buzz&start=" 
     else:
