@@ -8,19 +8,21 @@
     <div class="sectionheadline introText">{{headline}} <a href="{{ rss_url }}"><img src="/images/rss.png" /></a></div>
     
     {% for item in items %}
-      <div class="headline"><a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.Title }}</a></div>
+    <div class="hslice" id="{{item.key}}">
+      <div class="headline entry-title entry-content"><a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.Title }}</a></div>
       {% if item.Description %}
-      <div class="description">{{ item.Description }}</div>
+
+      <div class="description entry-content">{{ item.Description }}</div>
       {% endif %}
-      <div class="source">Source: <a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.source }}</a> Posted by: {{item.created_by}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
+      <div class="source entry-content">Source: <a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.source }}</a> Posted by: {{item.created_by}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
           <ul class="tags">
           <li>tags:</li>
           {% for tag in item.Tags %}
           <li><a href="/tag/{{ tag|escape }}">{{ tag|escape }}</a></li>
           {% endfor %}
           </ul>
-      <div class="para"><a href="/comment?item={{ item.Title|escape }}&k={{ item.key }}">{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}</a></div>
-      
+      <div class="para entry-content"><a href="/comment?item={{ item.Title|escape }}&k={{ item.key }}">{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}</a></div>
+
       <ul class="social">
         <li>Share this item:</li>
         <li class="email">
@@ -45,7 +47,7 @@
         </li>
       </ul>
  <div class="largespacer"></div>
-     
+     </div>
     {% endfor %}
     
     {% if items %}
