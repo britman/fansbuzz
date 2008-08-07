@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% block titlecontext %} {{ headline }}{% endblock %}
 
 {% block rssfeed %}
 <link href="{{ rss_url }}" rel="alternate" type="application/rss+xml" title="FansBuzz RSS Feed {{tag}}" />
