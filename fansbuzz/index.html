@@ -21,7 +21,7 @@
           <li><a href="/tag/{{ tag|escape }}">{{ tag|escape }}</a></li>
           {% endfor %}
           </ul>
-      <div class="para entry-content"><a href="/comment?item={{ item.Title|escape }}&k={{ item.key }}">{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}</a></div>
+      <div class="para entry-content"><a href="/comment?item={{ item.Title|escape }}&k={{ item.key }}">{% ifnotequal item.comment_set.count 0 %}<b>{% endifnotequal %}{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}{% ifnotequal item.comment_set.count 0 %}</b>{% endifnotequal %}</a></div>
 
       <ul class="social">
         <li>Share this item:</li>

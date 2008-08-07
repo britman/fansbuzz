@@ -105,7 +105,7 @@ class MainController(webapp.RequestHandler):
       url_linktext = 'Already got a google account...login here!'
 
     template_values = {
-      'items': items,
+      'items': items,      
       'page_url': page_url,
       'back_page_url': back_page_url,
       'url': url,
