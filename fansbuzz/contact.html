@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block titlecontext %} Contact{% endblock %}
+
+{% block content %}
+<p class="introText">Need help with FansBuzz? Got a question or suggestion? Get in contact we're here to help.</p>
+{{confirmation}}
+<form method="POST" action="/contact">
+    <div class="box">    
+        <label for="name"><span>Your name:</span> <input type="text" id="name" name="name" /></label>
+        <label for="email"><span>Your e-mail:</span> <input type="text" id="email" name="email" /></label>
+        <label for="message"><span>Your message:</span> <textarea name="message" id="message" rows="10" cols="25"></textarea></label>
+        <label><span>&nbsp;</span><input type="submit" value="Send" /></label>
+    
+    </div>
+</form>
+{% endblock %}

@@ -65,12 +65,12 @@
     
     {% endif %} 
     <div class="spacer"></div>
-    <form method="POST" action="/comment?k={{item.key}}">
+    
     <div class="box">
     {% if loggedin %}
+    <form method="POST" action="/comment?k={{item.key}}">
     <label for="id_name"><span>Post a comment:</span> <textarea name="Comment" id="id_Comment" rows="10" cols="55"></textarea></label>
-    <label><span>&nbsp;</span><input type="submit" value="Add comment" /></label>
-
+    <label><span>&nbsp;</span><input type="submit" value="Add comment" /></label></form>
     {% else %}
         <div><a href="{{ url }}">Login</a> or <a href="https://www.google.com/accounts/NewAccount?continue=http%3A%2F%2Fwww.fansbuzz.com%2F_ah%2Flogin%3Fcontinue%3Dhttp%3A%2F%2Fwww.fansbuzz.com%2F&service=ah&ltmpl=gm&sig=942083ef023882c87e6274b0e16e20fd">join</a> to post a comment. </div>
     {% endif %}   

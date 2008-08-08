@@ -16,7 +16,7 @@ img{
 }
 
 a:hover {
-    color:Yellow;
+    text-decoration:underline;
 }
 
 div.box .input-text{
@@ -54,7 +54,7 @@ div.box input .input-text{
 }
 
 .auth {
-    color:#cccccc;
+    color:#666666;
 }
 
 .formbtn{
@@ -85,7 +85,7 @@ div.box input .input-text{
 }
 
 .social li a {
-    color:#ccc;
+    color:#666666;
 }
 
 .social li a:hover {
@@ -123,7 +123,7 @@ div.box input .input-text{
     }
     
 .headline a:hover {
-    color: Yellow;
+    color: Red;
 
     }
     
@@ -163,7 +163,7 @@ div.box input .input-text{
     margin-top: 5px;
     margin-right: 5px;
     padding:10px;
-    background:#FCFAE1;
+    background:#F0DD93;
     border-style: dashed;     
     border-width: 1px;       
     border-color: #000; 
@@ -171,7 +171,7 @@ div.box input .input-text{
 
 .headerStyle
 {
-    background:#FCFAE1;
+    background:#F0DD93;
     border-style: dashed;     
     border-width: 1px;       
     border-color: #000; 
@@ -204,7 +204,7 @@ div.box input .input-text{
 }
 
 #hd {
-    background:#FCFAE1;
+    background:#F0DD93;
     border-style: solid;     
     border-width: 0px 0px 1px 0px;       
     border-color: #000; 
@@ -234,6 +234,6 @@ div.box input .input-text{
 
 
 #legal {
-   color:#ccc;
+   color:#666666;
 }
 
