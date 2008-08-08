@@ -164,17 +164,17 @@ div.box input .input-text{
     margin-right: 5px;
     padding:10px;
     background:#F0DD93;
-    border-style: dashed;     
+    border-style: solid;     
     border-width: 1px;       
-    border-color: #000; 
+    border-color: #541607; 
 }
 
 .headerStyle
 {
     background:#F0DD93;
-    border-style: dashed;     
+    border-style: solid;     
     border-width: 1px;       
-    border-color: #000; 
+    border-color: #541607; 
 }
 
 .source {
@@ -207,7 +207,7 @@ div.box input .input-text{
     background:#F0DD93;
     border-style: solid;     
     border-width: 0px 0px 1px 0px;       
-    border-color: #000; 
+    border-color: #541607; 
 }
 
 #topNav{
@@ -221,7 +221,7 @@ div.box input .input-text{
     display: inline;
     border-style: solid;     
     border-width: 1px 1px 1px 1px;       
-    border-color: #000; 
+    border-color: #541607; 
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size:24px;
     margin-left:10px;
