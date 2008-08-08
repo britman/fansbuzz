@@ -15,9 +15,9 @@
     <form method="POST" action="/item">
     <div class="box">
     <label for="Title"><span>Title:</span> {{ form.Title }}</label>
-    <label for="Title"><span>Description:</span> {{ form.Description }}</label>
+    <label for="Title"><span>Description:</span> <textarea name="Description" id="id_Description" rows="5" cols="25"></textarea></label>
     <label for="Url"><span>Url:</span> {{ form.Url }}</label>
-        <label for="Tags"><span>Tags:<br />(To select multiple clubs hold down ctrl)</span>
+        <label for="Tags"><span>Tags:<br />(To select multiple clubs/tags hold down ctrl)</span>
             <select multiple="true" name="Tags" size="10">
             <optgroup label="General">
                 <option value="General" selected="True">General</option>
