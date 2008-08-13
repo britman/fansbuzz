@@ -123,7 +123,7 @@ div.box input .input-text{
     }
     
 .headline a:hover {
-    color: Red;
+    color: #FF0000;
 
     }
     
@@ -200,7 +200,11 @@ div.box input .input-text{
 }
 
 .yui-g ,#hd img, #ft{
-    margin:auto 20px !important;
+    margin-top:0px !important;
+    margin-left:30px !important;
+    margin-right:0px !important;
+    margin-bottom:0px !important;
+    
 }
 
 #hd {
