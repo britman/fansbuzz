@@ -12,11 +12,11 @@
     <div class="hslice" id="{{item.key}}">
        <div>
         <span class="headline entry-title entry-content"><a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.Title }}</a></span>
-        <span class="para entry-content" style="vertical-align: middle;">(<a href="/comment?item={{ item.Title|escape }}&k={{ item.key }}">{% ifnotequal item.comment_set.count 0 %}<b>{% endifnotequal %}{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}{% ifnotequal item.comment_set.count 0 %}</b>{% endifnotequal %}</a>)</span>
+        <span class="para entry-content" style="vertical-align: middle;">(<a href="/comment?item={{ item.Title|escape }}&k={{ item.key }}">{% ifnotequal item.comment_set.count 0 %}<b>{% endifnotequal %}{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}{% ifnotequal item.comment_set.count 0 %}</b>{% endifnotequal %}<img src="images/comment.png" alt="Comments" height="13" /></a>)</span>
       </div>
       {% if item.Description %}
 
-      <div class="description entry-content">{{ item.Description }}</div>
+      <div class="description entry-content">{{ item.Description }} <a href="/comment?item={{ item.Title|escape }}&k={{ item.key }}">&raquo;</a></div>
       {% endif %}
       <div class="source entry-content">Source: <a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.source }}</a> Posted by: {{item.created_by}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
           <ul class="tags">
@@ -27,24 +27,7 @@
           </ul>
       
 
-      <ul class="social">
-        <li>Share this item:</li>
-        <li class="email">
-            <a title="e-mail this story to your friends" href="http://www.feedburner.com/fb/a/emailFlare?itemTitle={{ item.Title|escape }}&uri=http://www.fansbuzz.com/comment%3fk={{ item.key }}" rel="nofollow" target="_blank">e-mail it</a>
-        </li>
-        <li class="facebook"> 
-            <a id="facebook" title="Post this story to Facebook" href="http://www.facebook.com/sharer.php?u=http://www.fansbuzz.com/comment%3fk={{ item.key }}" target="_blank">Facebook</a> 
-        </li>
-        <li class="delicious"> 
-            <a id="delicious" title="Post this story to Delicious" href="http://del.icio.us/post?url=http://www.fansbuzz.com/comment%3fk={{ item.key }}&amp;title={{ item.Title|escape }}" target="_blank">Delicious</a> 
-        </li>   
-        <li class="stumbleupon"> 
-            <a id="stumbleupon" title="Post this story to StumbleUpon" href="http://www.stumbleupon.com/submit?url=http://www.fansbuzz.com/comment%3fk={{ item.key }}&amp;title={{ item.Title|escape }}" target="_blank">StumbleUpon</a> 
-        </li>
-        <li class="reddit"> 
-            <a id="reddit" title="Post this story to reddit" href="http://reddit.com/submit?url=http://www.fansbuzz.com/comment%3fk={{ item.key }}&amp;title={{ item.Title|escape }}" target="_blank">reddit</a> 
-        </li>
-      </ul>
+
  <div class="largespacer"></div>
      </div>
     {% endfor %}
