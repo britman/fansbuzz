@@ -33,7 +33,20 @@
 <body>
 <div id="doc3" class="yui-t5">
    <div id="hd">
-    <a href="{{ url }}" style="float:right;margin-right:5px;margin-top:10px;">{{ url_linktext }}</a>
+         <form action="http://www.google.com/cse" id="cse-search-box">
+  <div style="float:right;margin-top:10px;margin-right:5px;" class="source entry-content">
+    Search FansBuzz:<br />
+    <input type="hidden" name="cx" value="000816226471504407364:imsjoipuoms" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="q" size="31" />
+    <input type="submit" name="sa" value="Search" />
+    <br />
+    <a href="{{ url }}" style="margin-right:5px;margin-top:10px;">{{ url_linktext }}</a>
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&lang=en"></script>
+    
+    
     <a href="/"><img src="/images/logo.png" alt="FansBuzz - your team, your news" /></a>
     <ul id="topNav">
         <li class="{{newNavClass}}"><a href="/">new</a></li>
@@ -55,7 +68,8 @@
    
     {% block tags %}{% endblock %}
     <div class="introText">    
-        FansBuzz is a service for football fans everywhere to get all the latest football news. <br /> <br />Comment on stories that you love or hate and get all the latest news on <b>YOUR</b> team. <p><b>You can even use your <a href="https://www.google.com/accounts/NewAccount?continue=http%3A%2F%2Fwww.fansbuzz.com%2F_ah%2Flogin%3Fcontinue%3Dhttp%3A%2F%2Fwww.fansbuzz.com%2F&service=ah&ltmpl=gm&sig=942083ef023882c87e6274b0e16e20fd">google account</a> to <a href="https://www.google.com/accounts/ServiceLogin?service=ah&continue=http://www.fansbuzz.com/_ah/login%3Fcontinue%3Dhttp://www.fansbuzz.com/&ltmpl=gm&ahname=FansBuzz&sig=770dea6238758ce1507aa71736940f4f">login</a> and <a href="/item">break the latest news and gossip</a> to keep your fellow fans in the loop.</b></p> </div></div>
+        FansBuzz is a service for football fans everywhere to get all the latest football news. <br /> <br />Comment on stories that you love or hate and get all the latest news on <b>YOUR</b> team. <p><b>You can even use your <a href="https://www.google.com/accounts/NewAccount?continue=http%3A%2F%2Fwww.fansbuzz.com%2F_ah%2Flogin%3Fcontinue%3Dhttp%3A%2F%2Fwww.fansbuzz.com%2F&service=ah&ltmpl=gm&sig=942083ef023882c87e6274b0e16e20fd">google account</a> to <a href="https://www.google.com/accounts/ServiceLogin?service=ah&continue=http://www.fansbuzz.com/_ah/login%3Fcontinue%3Dhttp://www.fansbuzz.com/&ltmpl=gm&ahname=FansBuzz&sig=770dea6238758ce1507aa71736940f4f">login</a> and <a href="/item">break the latest news and gossip</a> to keep your fellow fans in the loop.</b></p>        
+        </div></div>
 	</div>
     
     
