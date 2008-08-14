@@ -238,11 +238,18 @@ class ClickController(webapp.RequestHandler):
   def post(self):        
       item = models.Item.get(self.request.get('id'))
       item.add_click()
-      
+
+class SitemapController(webapp.RequestHandler):
+  def get(self):
+        template_values = {
+          'build_date': datetime.now(),
+        }
+        path = os.path.join(os.path.dirname(__file__), 'Sitemap.xml')
+        self.response.out.write(template.render(path, template_values)) 
     
 def main():
   logging.getLogger().setLevel(logging.DEBUG)
-  application = webapp.WSGIApplication([('/', MainController),('/item', ItemController),('/comment', CommentController),('/tag/.*', MainController),('/click', ClickController),('/fb', facebookapp.FacebookApp),('/contact',contactcontroller.ContactController)],debug=True)
+  application = webapp.WSGIApplication([('/', MainController),('/item', ItemController),('/comment', CommentController),('/tag/.*', MainController),('/click', ClickController),('/fb', facebookapp.FacebookApp),('/contact',contactcontroller.ContactController),('/sitemap',SitemapController)],debug=True)
   wsgiref.handlers.CGIHandler().run(application)
 
 
