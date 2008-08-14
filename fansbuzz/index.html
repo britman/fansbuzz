@@ -12,7 +12,7 @@
     <div class="hslice" id="{{item.key}}">
        <div>
         <span class="headline entry-title entry-content"><a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.Title }}</a></span>
-        <span class="para entry-content" style="vertical-align: middle;">(<a href="/comment?item={{ item.Title|escape }}&k={{ item.key }}">{% ifnotequal item.comment_set.count 0 %}<b>{% endifnotequal %}{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}{% ifnotequal item.comment_set.count 0 %}</b>{% endifnotequal %}<img src="images/comment.png" alt="Comments" height="13" /></a>)</span>
+        <span class="para entry-content" style="vertical-align: middle;">(<a href="/comment?item={{ item.Title|escape }}&k={{ item.key }}">{% ifnotequal item.comment_set.count 0 %}<b>{% endifnotequal %}{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}{% ifnotequal item.comment_set.count 0 %}</b>{% endifnotequal %}<img src="/images/comment.png" alt="Comments" height="13" /></a>)</span>
       </div>
       {% if item.Description %}
 
