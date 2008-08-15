@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+    <loc>http://www.fansbuzz.com/</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/?type=buzz</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Football</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/General</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/England</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Accrington%20Stanley</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Arsenal</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Aston Villa</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Barnet</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Barnsley</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Blackburn</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Blackpool</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Bolton</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Bournemouth</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Bradford</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Brentford</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Brighton</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Bristol City</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Bristol Rovers</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Burnley</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Bury</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Cardiff</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Carlisle</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Charlton</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Chelsea</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Cheltenham</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Chester</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Chesterfield</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Colchester</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Colchester</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Crewe</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Crystal Palace</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Dag &amp; Red</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Darlington</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Doncaster</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Everton</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.fansbuzz.com/tag/Gillingham</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Grimsby</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Hartlepool</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Hereford</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Huddersfield</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Hull</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Ipswich</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Leeds</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Leicester</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Leyton Orient</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Ipswich</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Lincoln City</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Liverpool</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Luton</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Macclesfield</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Manchester City</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Man Utd</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Mansfield</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Middlesbrough</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Millwall</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Millwall</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Milton Keynes Dons</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Morecambe</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Newcastle</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Northampton</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Norwich</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Nottm Forest</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Notts County</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Oldham</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Peterborough</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Plymouth</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Port Vale</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Portsmouth</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Preston</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/QPR</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Rochdale</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Rotherham</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Scunthorpe</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Sheffield Utd</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Sheff Wed</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Shrewsbury</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Southampton</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Southend</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Stockport</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Stoke</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Sunderland</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Swansea</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Swindon</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Tottenham</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Tranmere</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Walsall</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Watford</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/West Brom</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/West Ham</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Wigan</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Wolverhampton</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Wrexham</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Wycombe</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Yeovil</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Brazil</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Holland</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Italy</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/N.Ireland</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Portugal</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Rep of Ireland</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Scotland</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Spain</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>http://www.fansbuzz.com/tag/Wales</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>         
+
+{% for item in items %}
+<url>
+    <loc>http://localhost:8080/comment?k={{item.key}}</loc>
+    <lastmod>{{ item.Posted_at|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>    
+{% endfor %}
+</urlset>

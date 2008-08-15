@@ -241,8 +241,11 @@ class ClickController(webapp.RequestHandler):
 
 class SitemapController(webapp.RequestHandler):
   def get(self):
+        items_query = db.GqlQuery('SELECT * FROM Item ORDER BY Posted_at DESC')    
+        items = items_query.fetch(1000)        
         template_values = {
           'build_date': datetime.now(),
+          'items': items,
         }
         path = os.path.join(os.path.dirname(__file__), 'Sitemap.xml')
         self.response.out.write(template.render(path, template_values)) 
