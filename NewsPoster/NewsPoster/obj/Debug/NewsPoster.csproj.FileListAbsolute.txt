@@ -1,0 +1,14 @@
+C:\NonTFSProjects\NewsPoster\NewsPoster\obj\Debug\ResolveAssemblyReference.cache
+C:\NonTFSProjects\NewsPoster\NewsPoster\bin\Debug\NewsPoster.exe
+C:\NonTFSProjects\NewsPoster\NewsPoster\bin\Debug\NewsPoster.pdb
+C:\NonTFSProjects\NewsPoster\NewsPoster\obj\Debug\NewsPoster.exe
+C:\NonTFSProjects\NewsPoster\NewsPoster\obj\Debug\NewsPoster.pdb
+C:\NonTFSProjects\NewsPoster\NewsPoster\bin\Debug\NewsPoster.exe.config
+C:\NonTFSProjects\NewsPoster\NewsPoster\bin\Debug\processed.txt
+E:\Projects\NewsPoster\NewsPoster\bin\Debug\NewsPoster.exe.config
+E:\Projects\NewsPoster\NewsPoster\obj\Debug\NewsPoster.exe
+E:\Projects\NewsPoster\NewsPoster\obj\Debug\NewsPoster.pdb
+E:\Projects\NewsPoster\NewsPoster\bin\Debug\processed.txt
+E:\Projects\NewsPoster\NewsPoster\bin\Debug\NewsPoster.exe
+E:\Projects\NewsPoster\NewsPoster\bin\Debug\NewsPoster.pdb
+E:\Projects\NewsPoster\NewsPoster\obj\Debug\ResolveAssemblyReference.cache
