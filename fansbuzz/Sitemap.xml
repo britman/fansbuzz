@@ -627,7 +627,7 @@
 
 {% for item in items %}
 <url>
-    <loc>http://localhost:8080/comment?k={{item.key}}</loc>
+    <loc>http://www.fansbuzz.com/comment?k={{item.key}}</loc>
     <lastmod>{{ item.Posted_at|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
