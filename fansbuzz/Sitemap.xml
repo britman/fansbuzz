@@ -4,31 +4,31 @@
     <loc>http://www.fansbuzz.com/</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>1</priority>
 </url> 
 <url>
     <loc>http://www.fansbuzz.com/?type=buzz</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>1</priority>
 </url> 
 <url>
     <loc>http://www.fansbuzz.com/tag/Football</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
 </url>
 <url>
     <loc>http://www.fansbuzz.com/tag/General</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
 </url>
 <url>
     <loc>http://www.fansbuzz.com/tag/England</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
 </url>
 <url>
     <loc>http://www.fansbuzz.com/tag/Accrington%20Stanley</loc>
@@ -40,13 +40,13 @@
     <loc>http://www.fansbuzz.com/tag/Arsenal</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
 </url> 
 <url>
     <loc>http://www.fansbuzz.com/tag/Aston Villa</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
 </url> 
 <url>
     <loc>http://www.fansbuzz.com/tag/Barnet</loc>
@@ -64,7 +64,7 @@
     <loc>http://www.fansbuzz.com/tag/Blackburn</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
 </url> 
 <url>
     <loc>http://www.fansbuzz.com/tag/Blackpool</loc>
@@ -148,7 +148,7 @@
     <loc>http://www.fansbuzz.com/tag/Chelsea</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
 </url> 
 <url>
     <loc>http://www.fansbuzz.com/tag/Cheltenham</loc>
@@ -214,7 +214,7 @@
     <loc>http://www.fansbuzz.com/tag/Everton</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
 </url> 
 <url>
     <loc>http://www.fansbuzz.com/tag/Gillingham</loc>
@@ -292,7 +292,7 @@
     <loc>http://www.fansbuzz.com/tag/Liverpool</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
 </url>
 <url>
     <loc>http://www.fansbuzz.com/tag/Luton</loc>
@@ -316,7 +316,7 @@
     <loc>http://www.fansbuzz.com/tag/Man Utd</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>1</priority>
 </url>
 <url>
     <loc>http://www.fansbuzz.com/tag/Mansfield</loc>
@@ -358,7 +358,7 @@
     <loc>http://www.fansbuzz.com/tag/Newcastle</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
 </url>
 <url>
     <loc>http://www.fansbuzz.com/tag/Northampton</loc>
@@ -508,7 +508,7 @@
     <loc>http://www.fansbuzz.com/tag/Tottenham</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
 </url>
 <url>
     <loc>http://www.fansbuzz.com/tag/Tranmere</loc>
@@ -574,7 +574,7 @@
     <loc>http://www.fansbuzz.com/tag/Brazil</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
 </url>
 <url>
     <loc>http://www.fansbuzz.com/tag/Holland</loc>
@@ -630,7 +630,7 @@
     <loc>http://localhost:8080/comment?k={{item.key}}</loc>
     <lastmod>{{ item.Posted_at|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
 </url>    
 {% endfor %}
 </urlset>
