@@ -12,3 +12,10 @@ E:\Projects\NewsPoster\NewsPoster\bin\Debug\processed.txt
 E:\Projects\NewsPoster\NewsPoster\bin\Debug\NewsPoster.exe
 E:\Projects\NewsPoster\NewsPoster\bin\Debug\NewsPoster.pdb
 E:\Projects\NewsPoster\NewsPoster\obj\Debug\ResolveAssemblyReference.cache
+C:\GitStuff\fansbuzz\NewsPoster\NewsPoster\bin\Debug\processed.txt
+C:\GitStuff\fansbuzz\NewsPoster\NewsPoster\bin\Debug\NewsPoster.exe.config
+C:\GitStuff\fansbuzz\NewsPoster\NewsPoster\bin\Debug\NewsPoster.exe
+C:\GitStuff\fansbuzz\NewsPoster\NewsPoster\bin\Debug\NewsPoster.pdb
+C:\GitStuff\fansbuzz\NewsPoster\NewsPoster\obj\Debug\ResolveAssemblyReference.cache
+C:\GitStuff\fansbuzz\NewsPoster\NewsPoster\obj\Debug\NewsPoster.exe
+C:\GitStuff\fansbuzz\NewsPoster\NewsPoster\obj\Debug\NewsPoster.pdb

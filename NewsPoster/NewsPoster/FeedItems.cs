@@ -20,9 +20,13 @@ namespace NewsPoster
             this.Add(new FeedItem(new Uri("http://feeds.reuters.com/reuters/UKFootballNews")));
             string[] englandTags = {"England"};
             this.Add(new FeedItem(new Uri("http://www.thefa.com/rss/england/rss.xml"),englandTags));  
-            this.Add(new FeedItem(new Uri("http://www.goal442.com/feed/")));            
-            this.Add(new FeedItem(new Uri("http://www.clubcall.com/rss.xml")));
-            this.Add(new FeedItem(new Uri("http://downloads.bbc.co.uk/podcasts/fivelive/5lfd/rss.xml")));           
+            this.Add(new FeedItem(new Uri("http://www.goal442.com/feed/")));
+            this.Add(new FeedItem(new Uri("http://www.clubcall.com/rss-football.xml")));
+            this.Add(new FeedItem(new Uri("http://downloads.bbc.co.uk/podcasts/fivelive/5lfd/rss.xml")));
+            string[] echo1Tags = { "Liverpool" };
+            this.Add(new FeedItem(new Uri("http://www.liverpoolecho.co.uk/liverpool-fc/liverpool-fc-news/rss.xml"), echo1Tags));
+            string[] echo2Tags = { "Everton" };
+            this.Add(new FeedItem(new Uri("http://www.liverpoolecho.co.uk/everton-fc/everton-fc-news/rss.xml"), echo2Tags)); 
         }
     }
 }
