@@ -205,6 +205,12 @@
     <priority>0.8</priority>
 </url> 
 <url>
+    <loc>http://www.fansbuzz.com/tag/Derby</loc>
+    <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url> 
+<url>
     <loc>http://www.fansbuzz.com/tag/Doncaster</loc>
     <lastmod>{{ build_date|date:"Y-m-d" }}</lastmod>
     <changefreq>daily</changefreq>
