@@ -27,6 +27,10 @@ namespace NewsPoster
             this.Add(new FeedItem(new Uri("http://www.liverpoolecho.co.uk/liverpool-fc/liverpool-fc-news/rss.xml"), echo1Tags));
             string[] echo2Tags = { "Everton" };
             this.Add(new FeedItem(new Uri("http://www.liverpoolecho.co.uk/everton-fc/everton-fc-news/rss.xml"), echo2Tags)); 
+            string[] manEveTags = { "Man Utd" };
+            this.Add(new FeedItem(new Uri("http://www.manchestereveningnews.co.uk/sport/football/manchester_united/rss.xml"), manEveTags)); 
+            string[] manEve1Tags = { "Manchester City" };
+            this.Add(new FeedItem(new Uri("http://www.manchestereveningnews.co.uk/sport/football/manchester_city/rss.xml"), manEve1Tags));             
         }
     }
 }
