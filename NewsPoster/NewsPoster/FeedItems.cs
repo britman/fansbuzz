@@ -30,7 +30,9 @@ namespace NewsPoster
             string[] manEveTags = { "Man Utd" };
             this.Add(new FeedItem(new Uri("http://www.manchestereveningnews.co.uk/sport/football/manchester_united/rss.xml"), manEveTags)); 
             string[] manEve1Tags = { "Manchester City" };
-            this.Add(new FeedItem(new Uri("http://www.manchestereveningnews.co.uk/sport/football/manchester_city/rss.xml"), manEve1Tags));             
+            this.Add(new FeedItem(new Uri("http://www.manchestereveningnews.co.uk/sport/football/manchester_city/rss.xml"), manEve1Tags));
+            this.Add(new FeedItem(new Uri("http://fourfourtwo.com/rss/")));
+            //this.Add(new FeedItem(new Uri("http://www.fcfootballblog.com/feed/rss/")));            
         }
     }
 }
