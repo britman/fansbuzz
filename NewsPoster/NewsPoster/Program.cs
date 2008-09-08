@@ -66,8 +66,8 @@ namespace NewsPoster
                     var posts = from item in rssFeed.Descendants("item")
                                 select new RssItem
                                     {
-                                        Title = item.Element("title").Value,                                       
-                                        PublishDate = ParseDate(item.Element("pubDate").Value),
+                                        Title = item.Element("title").Value,
+                                        PublishDate = DateTime.Now.ToUniversalTime(),
                                         Url = item.Element("link").Value,
                                         Id = item.Element("guid").Value,
                                         Description = item.Element("description").Value,
@@ -187,13 +187,25 @@ namespace NewsPoster
             //Console.WriteLine(result);
         }
 
-        private static DateTime ParseDate(string date)
+        private static DateTime ParseDate(XElement dateEle)
         {
+            string date;
+
+            if (dateEle == null)
+            {
+                return DateTime.Now.ToUniversalTime().Subtract(new TimeSpan(1, 0, 0));
+            }
+            else
+            {
+                date = dateEle.Value;
+            }
+
             DateTime d;
             if (DateTime.TryParse(date, out d))
             {
                 return d.ToUniversalTime();
             }
+
             if (date.Contains("BST"))
             {
                 try
@@ -214,6 +226,7 @@ namespace NewsPoster
                     }
                 }
             }
+
             return DateTime.Now.ToUniversalTime().Subtract(new TimeSpan(1,0,0)); 
         }
 
