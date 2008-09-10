@@ -4,7 +4,7 @@
 
 {% block content %}
      
-     <div class="headline" style="margin-top:20px;><a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.Title }}</a></div>
+     <div class="headline" style="margin-top:20px;"><a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.Title }}</a></div>
       {% if item.Description %}
       <div class="description">{{ item.Description }}</div>
       {% endif %}
