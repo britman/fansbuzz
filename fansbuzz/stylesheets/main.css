@@ -1,6 +1,6 @@
 body
 {
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: "Helvetica Bold", sans-serif;
     background:#fff;
     font-size:80%;
     margin:0px;
@@ -84,8 +84,7 @@ div.box input .input-text{
 .tags li, .social li{
     display: inline;
     font-size: 12px;
-    font-family: "Lucida Grande", Tahoma;
-
+    
 }
 
 .social li a {
@@ -110,15 +109,14 @@ div.box input .input-text{
 .social li.facebook{background:url("/images/facebook.gif") no-repeat 0 0;}
 .social li.stumbleupon{background:url("/images/stumbleupon.gif") no-repeat 0 0;}
 
-.sectionheadline {
-    font-family: Georgia, "Times New Roman", Times, serif;
+.sectionheadline {    
     font-size:24px;
     font-weight: 900;
     color: #222;
 }
 
 .headline, .headline a {
-    font-family: Georgia, "Times New Roman", Times, serif;
+    
     font-size:20px;
 	margin-top: 5px; margin-bottom: 0px;
     font-weight: normal;
@@ -132,7 +130,7 @@ div.box input .input-text{
     }
     
 .description, .description a {
-    font-family: Georgia, "Times New Roman", Times, serif;
+    
     font-size:14px;
 	margin-top: 5px; margin-bottom: 0px;
     font-weight: normal;
@@ -141,7 +139,7 @@ div.box input .input-text{
     }
     
 .comment {
-    font-family: Georgia, "Times New Roman", Times, serif;
+    
     font-size:18px;
 	margin-top: 5px; margin-bottom: 0px;
     font-weight: normal;
@@ -149,7 +147,7 @@ div.box input .input-text{
     }
 
 .para {
-    font-family: "Lucida Grande", Tahoma;
+    
 	font-size: 10px;
 	font-weight: lighter;
 	font-variant: normal;
@@ -161,7 +159,7 @@ div.box input .input-text{
 }
 
 .introText {
-    font-family: Georgia, "Times New Roman", Times, serif;
+    
     font-size:20px;
     margin-bottom: 20px;
     margin-top: 5px;
@@ -182,7 +180,7 @@ div.box input .input-text{
 }
 
 .source {
-    font-family: "Lucida Grande", Tahoma;
+    
 	font-size: 10px;
 	font-weight: lighter;
 	font-variant: normal;
@@ -229,8 +227,7 @@ div.box input .input-text{
     display: inline;
     border-style: solid;     
     border-width: 1px 1px 1px 1px;       
-    border-color: #541607; 
-    font-family: Georgia, "Times New Roman", Times, serif;
+    border-color: #541607;     
     font-size:24px;
     margin-left:10px;
     padding:5px 8px 0px 8px;

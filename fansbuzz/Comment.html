@@ -3,8 +3,8 @@
 {% block titlecontext %}{{ item.Title|escape }}{% endblock %}
 
 {% block content %}
-    
-     <div class="headline"><a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.Title }}</a></div>
+     
+     <div class="headline" style="margin-top:20px;><a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.Title }}</a></div>
       {% if item.Description %}
       <div class="description">{{ item.Description }}</div>
       {% endif %}
@@ -58,7 +58,7 @@
       <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
     
  <div class="largespacer"></div>
-     <hr />
+     <hr noshade="true" size="1" color="#000000" />
      {% for comment in item.comment_set %}
         <div class="comment">{{ comment.Comment|escape }}</div>
         <div class="para">Posted by {{comment.created_by}} @{{comment.Posted_at}}</div>
