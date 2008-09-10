@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block titlecontext %}: {{ item.Title|escape }}{% endblock %}
+{% block titlecontext %}{{ item.Title|escape }}{% endblock %}
 
 {% block content %}
     
@@ -43,6 +43,20 @@
             <a id="reddit" title="Post this story to reddit" href="http://reddit.com/submit?url=http://www.fansbuzz.com/comment%3fk={{ item.key }}&amp;title={{ item.Title|escape }}" target="_blank">reddit</a> 
         </li>
       </ul>
+    
+    <div class="largespacer"></div>     
+      
+      <script type="text/javascript">
+        <!--
+        google_ad_client = "pub-3857475696657847";
+        /* 728x90, created 10/09/08 */
+        google_ad_slot = "1965003673";
+        google_ad_width = 728;
+        google_ad_height = 90;
+        //-->
+      </script>
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+    
  <div class="largespacer"></div>
      <hr />
      {% for comment in item.comment_set %}

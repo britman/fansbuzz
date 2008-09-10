@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block titlecontext %} {{ headline }}{% endblock %}
+{% block titlecontext %}Welcome to FansBuzz! {{ headline }}{% endblock %}
 
 {% block rssfeed %}
 <link href="{{ rss_url }}" rel="alternate" type="application/rss+xml" title="FansBuzz RSS Feed {{tag}}" />
@@ -45,8 +45,18 @@
     {% else %}
         There are currently no FansBuzz stories for {{tag}}. <a href="/item">Be the first to post a story.</a>
       {% endif %}  
-
-
+<div class="largespacer"></div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-3857475696657847";
+/* 728x90, created 10/09/08 */
+google_ad_slot = "1755564208";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
 {% endblock %}
 
 {% block tags %}
