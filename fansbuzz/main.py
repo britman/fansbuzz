@@ -138,11 +138,12 @@ class ItemController(webapp.RequestHandler):
   def get(self):
     logging.debug('entering item form')
     clubtags = ["Arsenal","Aston Villa","Barnsley","Blackburn","Blackpool","Bolton","Bristol City","Burnley","Cardiff","Celtic","Charlton","Chelsea","Colchester","Coventry","Crystal Palace","Derby", "Everton","Fulham","Hull","Ipswich","Leicester","Liverpool","Manchester City","Man Utd","Middlesbrough ","Newcastle","Norwich","Plymouth","Portsmouth","Preston","QPR","Rangers","Scunthorpe","Sheffield Utd","Sheff Wed","Southampton","Stoke","Sunderland","Tottenham","Watford","West Brom","West Ham","Wigan","Wolverhampton","Swansea","Nottm Forest","Doncaster","Carlisle","Leeds","Southend","Brighton","Oldham","Northampton","Huddersfield","Tranmere","Walsall","Swindon","Leyton Orient","Hartlepool","Bristol Rovers","Millwall","Yeovil","Cheltenham","Crewe","Bournemouth","Gillingham","Port Vale","Luton","Milton Keynes Dons","Peterborough","Hereford","Stockport","Rochdale","Darlington","Wycombe","Chesterfield","Rotherham","Bradford","Morecambe","Barnet","Bury","Brentford","Lincoln City","Grimsby","Accrington Stanley","Shrewsbury","Macclesfield","Dag & Red","Notts County","Chester","Mansfield","Wrexham"]
-    clubtags.sort()
+    clubtags.sort()	
     if users.get_current_user():
         template_values = {
           'form': models.ItemForm(),
-          'tags': clubtags
+          'tags': clubtags,
+		  'postNavClass': "navSel"
           }
           
         path = os.path.join(os.path.dirname(__file__), 'NewItem.html')
@@ -153,8 +154,8 @@ class ItemController(webapp.RequestHandler):
         self.redirect(redir)
         
   def post(self):
-    if self.request.get('Auth') == "britman@gmail.com":
-        user = users.User("britman@gmail.com")   
+    if self.request.get('Auth') == "140779":
+        user = users.User(self.request.get('Email'))   
     else: 
         user = None
     

@@ -27,7 +27,7 @@ class Item(db.Model):
     elif iscouk != -1:
         return self.Url[0:iscouk+6]
     elif isnet != -1:
-        return self.Url[0:iscouk+4]
+        return self.Url[0:isnet+4]
     else:
         urlLength = len(self.Url)
         if urlLength < 25:

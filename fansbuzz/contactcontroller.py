@@ -9,7 +9,7 @@ from google.appengine.ext.webapp import template
 
 class ContactController(webapp.RequestHandler):
     def get(self):
-        template_values = None
+        template_values = {'contactNavClass': "navSel"}
         path = os.path.join(os.path.dirname(__file__), 'contact.html')
         self.response.out.write(template.render(path, template_values)) 
         

@@ -16,7 +16,7 @@
       </div>
       {% if item.Description %}
 
-      <div class="description entry-content">{{ item.Description }}. <a href="/comment?item={{ item.Title|escape }}&k={{ item.key }}" style="color:red">Discuss this story &raquo;</a></div>
+      <div class="description entry-content">{{ item.Description }} <a href="/comment?item={{ item.Title|escape }}&k={{ item.key }}" style="color:red">Discuss this story &raquo;</a></div>
       {% endif %}
       <div class="source entry-content">Source: <a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.source }}</a> Posted by: {{item.created_by}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
           <ul class="tags">

@@ -160,7 +160,7 @@ div.box input .input-text{
 
 .introText {
     
-    font-size:20px;
+    font-size:18px;
     margin-bottom: 20px;
     margin-top: 5px;
     margin-right: 5px;
@@ -228,9 +228,9 @@ div.box input .input-text{
     border-style: solid;     
     border-width: 1px 1px 1px 1px;       
     border-color: #541607;     
-    font-size:24px;
-    margin-left:10px;
-    padding:5px 8px 0px 8px;
+    font-size:20px;
+    margin-left:7px;
+    padding:0px 0px 0px 5px;
 }
 #topNav li.navSel {
     background-color:#fff;

@@ -17,7 +17,7 @@ namespace NewsPoster
     class Program
     {
         static string FILE_LOCATION = System.IO.Directory.GetCurrentDirectory() + "\\processed.txt";
-        const int retry = 600000 * 6; //10mins = 600000 milli
+        const int retry = 600000; //10mins = 600000 milli
         static string target = string.Empty;
         static void Main(string[] args)
         {
@@ -67,7 +67,7 @@ namespace NewsPoster
                                 select new RssItem
                                     {
                                         Title = item.Element("title").Value,
-                                        PublishDate = DateTime.Now.ToUniversalTime(),
+                                        PublishDate = ParseDate(item.Element("pubDate")),
                                         Url = item.Element("link").Value,
                                         Id = item.Element("guid").Value,
                                         Description = item.Element("description").Value,
@@ -175,7 +175,8 @@ namespace NewsPoster
 
                 //add football tag
                 post.PostItems.Add("Tags", "Football");
-                post.PostItems.Add("Auth", "britman@gmail.com");
+                post.PostItems.Add("Auth", "140779");
+                post.PostItems.Add("Email", "fansbuzz@fansbuzz.com");
                 post.Type = PostSubmitter.PostTypeEnum.Post;
                 string result = post.Post();
             }
@@ -203,7 +204,7 @@ namespace NewsPoster
             DateTime d;
             if (DateTime.TryParse(date, out d))
             {
-                return d.ToUniversalTime();
+                return d.ToUniversalTime().Subtract(new TimeSpan(1, 0, 0)); 
             }
 
             if (date.Contains("BST"))
