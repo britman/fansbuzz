@@ -13,9 +13,15 @@ handlers:
 - url: /images
   static_dir: images
   
+- url: /downloads/FansBuzzDesktop.air
+  mime_type: application/vnd.adobe.air-application-installer-package+zip .air
+  static_files: downloads/FansBuzzDesktop.air 
+  upload: downloads/FansBuzzDesktop.air 
+  
 - url: /favicon.ico
+  mime_type: image/vnd.microsoft.icon
   static_files: images/favicon.ico
-  upload: images/favicon.ico
+  upload: images/favicon.ico  
   
 - url: /.*
   script: main.py

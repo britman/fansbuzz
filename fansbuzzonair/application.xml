@@ -14,13 +14,13 @@
 -->
 
 	<!-- The application identifier string, unique to this application. Required. -->
-	<id>com.fansbuzz.FansBuzzonAir</id>
+	<id>com.fansbuzz.FansBuzzDesktop</id>
 
 	<!-- Used as the filename for the application. Required. -->
-	<filename>FansBuzzonAir</filename>
+	<filename>FansBuzz</filename>
 
 	<!-- The name that is displayed in the AIR application installer. Optional. -->
-	<name>FansBuzzonAir</name>
+	<name>FansBuzz Desktop</name>
 
 	<!-- An application version designator (such as "v1", "2.5", or "Alpha 1"). Required. -->
 	<version>1.0</version>
@@ -36,7 +36,7 @@ Found a hot football news story? Sign up or log in and publish it on FansBuzz an
 	<!-- Settings for the application's initial window. Required. -->
 	<initialWindow>
 		<!-- The main HTML file of the application. Required. -->
-		<content>FansBuzzonAir.html</content>
+		<content>FansBuzzDesktop.html</content>
 		
 		<!-- The title of the main window. Optional. -->
 		<title/>
@@ -66,7 +66,7 @@ Found a hot football news story? Sign up or log in and publish it on FansBuzz an
 		<height>768</height>
 
 		<!-- The window's initial x position. Optional. -->
-		<x>600</x>
+		<x>200</x>
 
 		<!-- The window's initial y position. Optional. -->
 		<y>200</y>
@@ -75,7 +75,7 @@ Found a hot football news story? Sign up or log in and publish it on FansBuzz an
 		<minSize>300 768</minSize>
 
 		<!-- The window's initial maximum size, specified as a width/height pair, such as "1600 1200". Optional. -->
-		<maxSize>1280 1024</maxSize>
+		<maxSize>1600 768</maxSize>
 	</initialWindow>
 
 	<!-- The subpath of the standard default installation location to use. Optional. -->
@@ -87,7 +87,9 @@ Found a hot football news story? Sign up or log in and publish it on FansBuzz an
 	<!-- The icon the system uses for the application. For at least one resolution,
 		 specify the path to a PNG file included in the AIR package. Optional. -->
 	<icon>
-	<image16x16>images/favicon.gif</image16x16>
+			<image16x16>images/favicon_16.png</image16x16>
+			<image32x32>images/favicon_32.png</image32x32>
+			<image48x48>images/favicon_48.png</image48x48>
 	</icon>
 
 	<!-- Whether the application handles the update when a user double-clicks an update version
@@ -97,7 +99,7 @@ Found a hot football news story? Sign up or log in and publish it on FansBuzz an
 	
 	<!-- Whether the application can be launched when the user clicks a link in a web browser.
 	Optional. Default false. -->
-	<!-- <allowBrowserInvocation></allowBrowserInvocation> -->
+	<allowBrowserInvocation>true</allowBrowserInvocation>
 
 	<!-- Listing of file types for which the application can register. Optional. -->
 	<fileTypes>

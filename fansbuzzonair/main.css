@@ -44,6 +44,14 @@ h3 {
 	font-weight:bold;
 }
 
+#submenu {
+	background:#F0DD93;
+    border-style: solid;     
+    border-width: 0px 0px 1px 0px;       
+    border-color: #541607; 
+	text-align:center;
+}
+
 #intro {
  	background:#F0DD93;
     border-style: solid;     
