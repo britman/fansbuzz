@@ -4,20 +4,21 @@
 
 {% block content %}
      
-     <div class="headline" style="margin-top:20px;"><a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.Title }}</a></div>
+     <h2 class="headline" style="margin-top:20px;"><a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.Title }}</a></h2>
       {% if item.Description %}
-      <div class="description">{{ item.Description }}</div>
+      <h3 class="description">{{ item.Description }}</h3>
       {% endif %}
       <div class="source">Source: <a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.source }}</a> Posted by: {{item.created_by}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
-          <ul class="tags">
+        <ul class="tags">
           <li>tags:</li>
           {% for tag in item.Tags %}
           <li><a href="/tag/{{ tag|escape }}">{{ tag|escape }}</a></li>
           {% endfor %}
-          </ul>
-          
-     <div class="spacer"></div>
-     
+          </ul>        
+        
+        <div class="spacer"></div>
+             
+
      <div class="spacer"></div>
       
       <ul class="social">
@@ -79,7 +80,7 @@
     
     {% endif %} 
     <div class="spacer"></div>
-    
+
     <div class="box">
     {% if loggedin %}
     <form method="POST" action="/comment?k={{item.key}}">

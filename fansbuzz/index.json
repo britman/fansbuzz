@@ -1,0 +1,5 @@
+{"items":[
+{% for item in items %}
+    {"item":{"title":"{{ item.Title|escape }}",{% if item.Description %}"description":"{{ item.Description }}",{% endif %}"link":"http://www.fansbuzz.com/comment?k={{ item.key }}"}},
+    {% endfor %}
+]}

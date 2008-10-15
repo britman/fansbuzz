@@ -127,7 +127,19 @@ class MainController(webapp.RequestHandler):
           'tag': tag,
           'headline': headline,
         }
+
         path = os.path.join(os.path.dirname(__file__), 'rss.xml')
+        self.response.out.write(template.render(path, template_values)) 
+    elif mode == "JSON":
+        template_values = {
+          'items': items,
+          'url': self.request.uri,
+          'build_date': datetime.now(),
+          'tag': tag,
+          'headline': headline,
+        }
+		
+        path = os.path.join(os.path.dirname(__file__), 'index.json')
         self.response.out.write(template.render(path, template_values)) 
     else:
         path = os.path.join(os.path.dirname(__file__), 'index.html')

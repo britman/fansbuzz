@@ -1,0 +1,46 @@
+<html>
+	<head>
+        <title>Application Sandbox sample</title>
+        <link href="sample.css" rel="stylesheet" type="text/css"/>  
+        <script type="text/javascript" src="AIRAliases.js"></script>
+		<script type="text/javascript" src="lib/jquery/jquery.js"></script>
+		<script type="text/javascript" src="lib/json2.js"></script>
+        <script type="text/javascript">
+			$(document).ready( function()
+				{
+					 request = new air.URLRequest("http://www.fansbuzz.com/?mode=RSS"); 
+					 request.method = air.URLRequestMethod.GET; 
+					 loader = new air.URLLoader(); 
+					 loader.addEventListener(air.Event.COMPLETE, fetchComplete); 
+					 try { 
+					   loader.load(request); 
+					 } catch (error) { 
+					   alert("Error connecting to login server."); 
+					 } 
+					
+				}				
+			);
+			
+			function fetchComplete(event) { 
+				var domParser = new DOMParser();					
+				newsXML = domParser.parseFromString(event.target.data, "text/xml");
+				items = newsXML.getElementsByTagName("item");
+				alert(items);
+				//alert(newsXML.getElementsByTagName("item")[0].childNodes[5].textContent);
+				for (var i = 0; i < items.length; i++) {
+					alert(i);
+				} 				
+			}
+
+
+          
+            
+        </script>
+	</head>
+
+    <body>
+    	<div id="images"></div>
+       
+        
+    </body>
+</html>

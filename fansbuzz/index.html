@@ -10,13 +10,13 @@
     
     {% for item in items %}
     <div class="hslice" id="{{item.key}}">
-       <div>
+       <h2>
         <span class="headline entry-title entry-content"><a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.Title }}</a></span>
-        <span class="para entry-content" style="vertical-align: middle;">(<a href="/comment?item={{ item.Title|escape }}&k={{ item.key }}">{% ifnotequal item.comment_set.count 0 %}<b>{% endifnotequal %}{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}{% ifnotequal item.comment_set.count 0 %}</b>{% endifnotequal %}<img src="/images/comment.png" alt="Comments" height="13" /></a>)</span>
-      </div>
+        <span class="para entry-content" style="vertical-align: middle;">(<a href="/comment?k={{ item.key }}">{% ifnotequal item.comment_set.count 0 %}<b>{% endifnotequal %}{{item.comment_set.count}} comment{{ item.comment_set.count|pluralize }}{% ifnotequal item.comment_set.count 0 %}</b>{% endifnotequal %}<img src="/images/comment.png" alt="Comments" height="13" /></a>)</span>
+      </h2>
       {% if item.Description %}
 
-      <div class="description entry-content">{{ item.Description }} <a href="/comment?item={{ item.Title|escape }}&k={{ item.key }}" style="color:red">Discuss this story &raquo;</a></div>
+      <h3 class="description entry-content">{{ item.Description }} <a href="/comment?k={{ item.key }}" style="color:red">Discuss this story &raquo;</a></h3>
       {% endif %}
       <div class="source entry-content">Source: <a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.source }}</a> Posted by: {{item.created_by}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
           <ul class="tags">

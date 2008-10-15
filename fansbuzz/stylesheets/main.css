@@ -23,6 +23,11 @@ a:hover {
     text-decoration:underline;
 }
 
+h2,h3 {
+	padding:0px;
+	margin:0px;
+}
+
 div.box .input-text{
     border:1px solid #3b6e22;
     color:#666666;
@@ -217,8 +222,8 @@ div.box input .input-text{
 }
 
 #topNav{
-	margin: 0;
-	padding: 0;
+	margin: 0px;
+	padding: 0px;
 	list-style: none;
     display:inline;
 }
@@ -226,15 +231,16 @@ div.box input .input-text{
 #topNav li {
     display: inline;
     border-style: solid;     
-    border-width: 1px 1px 1px 1px;       
+    border-width: 1px 1px 0px 1px;       
     border-color: #541607;     
     font-size:20px;
     margin-left:7px;
-    padding:0px 0px 0px 5px;
+    padding:5px 5px 0px 5px;
 }
 #topNav li.navSel {
     background-color:#fff;
     border-bottom-color: #fff;
+	border-width: 1px 1px 1px 1px;       
 }
 
 
