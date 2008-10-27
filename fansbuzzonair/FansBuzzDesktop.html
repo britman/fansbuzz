@@ -1,6 +1,6 @@
 <html>
 	<head>
-        <title>Welcome to FansBuzz!</title>  
+        <title>Welcome to FansBuzz Desktop</title>  
         <script type="text/javascript" src="AIRAliases.js"></script>
 		<script type="text/javascript" src="lib/jquery/jquery.js"></script>
 		<script type="text/javascript" src="lib/json2.js"></script>
@@ -9,7 +9,7 @@
         <script type="text/javascript">
         	var feed = "http://www.fansbuzz.com/?mode=RSS"	
 			var monitor = ""; 
-					
+			var intervalId = 0;		
 			//set up a network check for http traffic
 			function checkConnection()
 			{				
@@ -37,9 +37,18 @@
 					 } catch (error) { 
 					 	air.trace("Unable to load URL"); 
 					 } 
-    				 //set call back
+    				 
+      				 //check the interval and if it's set clear it.
+					if(intervalId != 0)
+					{					
+						clearInterval(intervalId);
+					}
+					
+      				//set the interval										
  					var _self = this; 
-					setInterval(function(){this.fetchItems.apply(_self);}, 60000 * 10);	
+					intervalId = setInterval(function(){this.fetchItems.apply(_self);}, 1200000);	
+
+					
 			}
 			
 			function fetchComplete(event) { 
@@ -314,6 +323,6 @@
 		<div id="wrapper"></div>
 		<div id="loader" align="center">Getting the latest stories...<br /><img src="images/ajax-loader.gif" /></div>
 		
-		<div id="ft"><a href="#" onclick="Go('http://www.fansbuzz.com')">FansBuzz</a> is a source for what's new and hot in the world of football. FansBuzz tracks what stories people are reading and ensures that the "latest buzz" rises to the top.</div>
+		<div id="ft"><a href="#" onclick="Go('http://www.fansbuzz.com')">FansBuzz</a> is a source for what's new and hot in the world of football. FansBuzz tracks what stories people are reading and ensures that the "latest buzz" rises to the top.<br /><br />Oh and just so you know, stories are auto refreshed for FansBuzz Desktop every 20 minutes. Have fun.</div>
     </body>
 </html>

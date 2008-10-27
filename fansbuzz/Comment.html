@@ -8,6 +8,7 @@
       {% if item.Description %}
       <h3 class="description">{{ item.Description }}</h3>
       {% endif %}
+        <h4>Got an opinion on this story. Share it below!</h4>
       <div class="source">Source: <a href="{{ item.Url|escape }}" class="newsLink" id="{{ item.key }}" target="_blank">{{ item.source }}</a> Posted by: {{item.created_by}} @{{item.Posted_at|date:"fA"}} on {{item.Posted_at|date:"D dS N y"}}</div>
         <ul class="tags">
           <li>tags:</li>
@@ -61,12 +62,12 @@
  <div class="largespacer"></div>
      <hr noshade="true" size="1" color="#000000" />
      {% for comment in item.comment_set %}
-        <div class="comment">{{ comment.Comment|escape }}</div>
-        <div class="para">Posted by {{comment.created_by}} @{{comment.Posted_at}}</div>
+        <h4  class="description">{{ comment.Comment|escape }}</h4>
+        <div class="source">Posted by {{comment.created_by}} @{{comment.Posted_at|date:"fA"}} on {{comment.Posted_at|date:"D dS N y"}}</div>
       {% endfor %}
      
      {% ifequal item.comment_set.count 0 %}
-     <b>Be the first to post a comment on this story!</b>
+     <b>Be the first to start the discussion.</b>
      {% endifequal %}
      
     {% if form.errors %}
@@ -84,7 +85,7 @@
     <div class="box">
     {% if loggedin %}
     <form method="POST" action="/comment?k={{item.key}}">
-    <label for="id_name"><span>Post a comment:</span> <textarea name="Comment" id="id_Comment" rows="10" cols="55"></textarea></label>
+    <label for="id_name"><span>Join the discussion:</span> <textarea name="Comment" id="id_Comment" rows="10" cols="55"></textarea></label>
     <label><span>&nbsp;</span><input type="submit" value="Add comment" /></label></form>
     {% else %}
         <div><a href="{{ url }}">Login</a> or <a href="https://www.google.com/accounts/NewAccount?continue=http%3A%2F%2Fwww.fansbuzz.com%2F_ah%2Flogin%3Fcontinue%3Dhttp%3A%2F%2Fwww.fansbuzz.com%2F&service=ah&ltmpl=gm&sig=942083ef023882c87e6274b0e16e20fd">join</a> to post a comment. </div>
