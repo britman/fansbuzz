@@ -14,7 +14,7 @@
     <item>
       <title>{{ item.Title|escape }}</title>
       {% if item.Description %}
-      <description>{{ item.Description }}</description>
+      <description>{{ item.Description|escape }}</description>
       {% endif %}
       <link>http://www.fansbuzz.com/comment?k={{ item.key }}</link>
       <comments>http://www.fansbuzz.com/comment?k={{ item.key }}</comments>
